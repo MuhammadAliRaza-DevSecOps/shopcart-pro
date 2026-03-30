@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Orders - ShopCart Pro</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">ShopCart Pro</div>
+    <nav class="nav" id="site-nav"></nav>
+  </header>
+
+  <section class="section">
+    <h2>My Orders</h2>
+    <div id="orders-list" class="orders-grid">
+      <div class="order-card">
+        <p>Loading orders...</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+
+  <script>
+    async function loadOrdersInline() {
+      const ordersList = document.getElementById("orders-list");
+      const token = localStorage.getItem("token");
+
+      if (!ordersList) {
+        return;
+      }
+
+      if (!token) {
+        ordersList.innerHTML = `
+          <div class="order-card">
+            <p>You are not logged in.</p>
+          </div>
+        `;
+        return;
+      }
+
+      try {
+        const response = await fetch("http://localhost:5000/api/orders/my", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+
+        const orders = await response.json();
+
+        if (!response.ok) {
+          ordersList.innerHTML = `
+            <div class="order-card">
+              <p>${orders.message || "Failed to load orders."}</p>
+            </div>
+          `;
+          return;
+        }
+
+        if (!Array.isArray(orders) || orders.length === 0) {
+          ordersList.innerHTML = `
+            <div class="order-card">
+              <p>No orders found.</p>
+            </div>
+          `;
+          return;
+        }
+
+        let html = "";
+
+        orders.forEach((order) => {
+          const items = Array.isArray(order.items) ? order.items : [];
+          const shipping = order.shippingAddress || {};
+
+          const itemsHtml = items.length
+            ? items.map((item) => `
+                <div class="order-item-row">
+                  <span>${item.name || "Unnamed Item"}</span>
+                  <span>Qty: ${item.quantity || 1}</span>
+                  <span>PKR ${item.price || 0}</span>
+                </div>
+              `).join("")
+            : "<p>No items found.</p>";
+
+          html += `
+            <div class="order-card">
+              <div class="order-header">
+                <h3>Order #${order._id || "N/A"}</h3>
+                <span class="order-status">${order.status || "Pending"}</span>
+              </div>
+
+              <div class="order-meta">
+                <p><strong>Date:</strong> ${order.createdAt ? new Date(order.createdAt).toLocaleString() : "N/A"}</p>
+                <p><strong>Total:</strong> PKR ${order.totalAmount || 0}</p>
+              </div>
+
+              <div class="order-section">
+                <h4>Shipping Address</h4>
+                <p>${shipping.fullName || "-"}</p>
+                <p>${shipping.phone || "-"}</p>
+                <p>${shipping.city || "-"}</p>
+                <p>${shipping.address || "-"}</p>
+              </div>
+
+              <div class="order-section">
+                <h4>Items</h4>
+                <div class="order-items">
+                  ${itemsHtml}
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        ordersList.innerHTML = html;
+      } catch (error) {
+        ordersList.innerHTML = `
+          <div class="order-card">
+            <p>Something went wrong while loading orders.</p>
+          </div>
+        `;
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", loadOrdersInline);
+  </script>
+</body>
+</html>
