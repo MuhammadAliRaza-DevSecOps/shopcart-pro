@@ -2,52 +2,71 @@ pipeline {
     agent any
 
     environment {
-        SONAR_HOST_URL = 'http://host.docker.internal:9000'
-        SONAR_TOKEN = 'sqp_8086e88280aa7c58f0fc3beae9301b4d3019b474'
+        BACKEND_IMAGE = "shopcart-backend:latest"
+        FRONTEND_IMAGE = "shopcart-frontend:latest"
+        K8S_NAMESPACE = "shopcart"
+        HELM_RELEASE = "shopcart-release"
+        HELM_CHART_PATH = "./shopcart-chart"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                dir('app') {
-                    git branch: 'main', url: 'https://github.com/MuhammadAliRaza-DevSecOps/shopcart-pro.git'
-                }
+                checkout scm
             }
         }
 
-        stage('Docker Deploy') {
+        stage('Docker Version Check') {
             steps {
-                dir('app') {
-                    sh 'docker-compose down || true'
-                    sh 'docker-compose up --build -d'
-                }
+                bat 'docker --version'
             }
         }
 
-        stage('Trivy Scan Backend') {
+        stage('Kubectl Version Check') {
             steps {
-                sh 'docker run --rm aquasec/trivy:0.61.0 image app-backend:latest'
+                bat 'kubectl version --client'
             }
         }
 
-        stage('Trivy Scan Frontend') {
+        stage('Helm Version Check') {
             steps {
-                sh 'docker run --rm aquasec/trivy:0.61.0 image app-frontend:latest'
+                bat 'helm version'
             }
         }
 
-        stage('SonarQube Scan') {
+        stage('Build Backend Image') {
             steps {
-                dir('app') {
-                    sh '''
-                    docker run --rm \
-                      -e SONAR_HOST_URL=$SONAR_HOST_URL \
-                      -e SONAR_TOKEN=$SONAR_TOKEN \
-                      -v $(pwd):/usr/src \
-                      sonarsource/sonar-scanner-cli
-                    '''
-                }
+                bat 'docker build -t %BACKEND_IMAGE% ./backend'
             }
+        }
+
+        stage('Build Frontend Image') {
+            steps {
+                bat 'docker build -t %FRONTEND_IMAGE% ./frontend'
+            }
+        }
+
+        stage('Helm Upgrade Deploy') {
+            steps {
+                bat 'helm upgrade --install %HELM_RELEASE% %HELM_CHART_PATH% -n %K8S_NAMESPACE% --create-namespace'
+            }
+        }
+
+        stage('Verify Kubernetes') {
+            steps {
+                bat 'kubectl get pods -n %K8S_NAMESPACE%'
+                bat 'kubectl get svc -n %K8S_NAMESPACE%'
+                bat 'kubectl get ingress -n %K8S_NAMESPACE%'
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully.'
+        }
+        failure {
+            echo 'Pipeline failed.'
         }
     }
 }
