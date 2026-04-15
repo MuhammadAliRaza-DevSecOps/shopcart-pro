@@ -1,0 +1,17 @@
+replicaCount: 1
+
+backend:
+  image: shopcart-backend
+  port: 5000
+
+frontend:
+  image: shopcart-frontend
+  port: 80
+  nodePort: 30080
+
+mongo:
+  image: mongo:7
+  port: 27017
+
+ingress:
+  host: shopcart.local

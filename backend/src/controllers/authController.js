@@ -1,22 +1,43 @@
 const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 const generateToken = require("../utils/generateToken");
+const { writeSecurityLog } = require("../utils/securityLogger");
+
+
 
 async function registerUser(req, res) {
   try {
     const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
+      writeSecurityLog("REGISTER_INPUT_MISSING", "Registration attempted with missing fields", {
+        email: email || "not_provided",
+        ip: req.ip,
+        userAgent: req.headers["user-agent"] || "unknown"
+      });
+
       return res.status(400).json({ message: "All fields are required" });
     }
 
     if (password.length < 6) {
+      writeSecurityLog("WEAK_PASSWORD_REGISTER", "Registration attempted with weak password", {
+        email,
+        ip: req.ip,
+        userAgent: req.headers["user-agent"] || "unknown"
+      });
+
       return res.status(400).json({ message: "Password must be at least 6 characters" });
     }
 
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
+      writeSecurityLog("DUPLICATE_REGISTER_ATTEMPT", "Registration attempted with existing email", {
+        email,
+        ip: req.ip,
+        userAgent: req.headers["user-agent"] || "unknown"
+      });
+
       return res.status(400).json({ message: "User already exists" });
     }
 
@@ -27,6 +48,13 @@ async function registerUser(req, res) {
       name,
       email,
       password: hashedPassword
+    });
+
+    writeSecurityLog("SUCCESS_REGISTER", "User registered successfully", {
+      email: user.email,
+      ip: req.ip,
+      userAgent: req.headers["user-agent"] || "unknown",
+      isAdmin: user.isAdmin
     });
 
     return res.status(201).json({
@@ -40,6 +68,12 @@ async function registerUser(req, res) {
       token: generateToken(user._id)
     });
   } catch (error) {
+    writeSecurityLog("REGISTER_SERVER_ERROR", "Registration failed due to server error", {
+      email: req.body?.email || "unknown",
+      ip: req.ip,
+      error: error.message
+    });
+
     return res.status(500).json({ message: "Registration failed", error: error.message });
   }
 }
@@ -49,20 +83,46 @@ async function loginUser(req, res) {
     const { email, password } = req.body;
 
     if (!email || !password) {
+      writeSecurityLog("LOGIN_INPUT_MISSING", "Login attempted with missing email or password", {
+        email: email || "not_provided",
+        ip: req.ip,
+        userAgent: req.headers["user-agent"] || "unknown"
+      });
+
       return res.status(400).json({ message: "Email and password are required" });
     }
 
     const user = await User.findOne({ email });
 
     if (!user) {
+      writeSecurityLog("UNKNOWN_USER_LOGIN", "Login attempted with unknown account", {
+        email,
+        ip: req.ip,
+        userAgent: req.headers["user-agent"] || "unknown"
+      });
+
       return res.status(401).json({ message: "Invalid email or password" });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
+      writeSecurityLog("FAILED_LOGIN", "Invalid password attempt", {
+        email,
+        ip: req.ip,
+        userAgent: req.headers["user-agent"] || "unknown",
+        isAdmin: user.isAdmin
+      });
+
       return res.status(401).json({ message: "Invalid email or password" });
     }
+
+    writeSecurityLog("SUCCESS_LOGIN", "User logged in successfully", {
+      email: user.email,
+      ip: req.ip,
+      userAgent: req.headers["user-agent"] || "unknown",
+      isAdmin: user.isAdmin
+    });
 
     return res.status(200).json({
       message: "Login successful",
@@ -75,6 +135,12 @@ async function loginUser(req, res) {
       token: generateToken(user._id)
     });
   } catch (error) {
+    writeSecurityLog("LOGIN_SERVER_ERROR", "Login failed due to server error", {
+      email: req.body?.email || "unknown",
+      ip: req.ip,
+      error: error.message
+    });
+
     return res.status(500).json({ message: "Login failed", error: error.message });
   }
 }
@@ -96,14 +162,33 @@ async function makeMeAdmin(req, res) {
     ).select("-password");
 
     if (!user) {
+      writeSecurityLog("ADMIN_UPDATE_USER_NOT_FOUND", "Admin promotion attempted for non-existing user", {
+        email,
+        ip: req.ip,
+        userAgent: req.headers["user-agent"] || "unknown"
+      });
+
       return res.status(404).json({ message: "User not found" });
     }
+
+    writeSecurityLog("ADMIN_PROMOTION", "User updated to admin", {
+      email: user.email,
+      ip: req.ip,
+      userAgent: req.headers["user-agent"] || "unknown",
+      isAdmin: user.isAdmin
+    });
 
     return res.json({
       message: "User updated to admin",
       user
     });
   } catch (error) {
+    writeSecurityLog("ADMIN_UPDATE_ERROR", "Failed to update user to admin", {
+      email: req.body?.email || "unknown",
+      ip: req.ip,
+      error: error.message
+    });
+
     return res.status(500).json({
       message: "Failed to update admin",
       error: error.message

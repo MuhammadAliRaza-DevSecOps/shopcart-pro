@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.txt
+*.log
+logs/
+backend/logs/
+frontend/node_modules/
+backend/node_modules/
+metrics-server-patch.yaml
+backend-resources-patch.yaml
+frontend-resources-patch.yaml
