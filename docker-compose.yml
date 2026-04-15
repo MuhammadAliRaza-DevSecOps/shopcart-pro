@@ -10,7 +10,7 @@ services:
       context: ./backend
     restart: unless-stopped
     ports:
-      - "5500:5000"
+      - "5001:5000"
     volumes:
       - ./backend/logs:/app/logs
     env_file:
