@@ -2,22 +2,8 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/User");
 const generateToken = require("../utils/generateToken");
 const { writeSecurityLog } = require("../utils/securityLogger");
-const { sendSecurityAlert } = require("../utils/emailAlert");
-const { calculateRisk } = require("../utils/riskScorer");
 
-const failedLoginTracker = {};
 
-function trackFailedLogin(email) {
-  if (!failedLoginTracker[email]) {
-    failedLoginTracker[email] = 0;
-  }
-  failedLoginTracker[email] += 1;
-  return failedLoginTracker[email];
-}
-
-function resetFailedLogin(email) {
-  failedLoginTracker[email] = 0;
-}
 
 async function registerUser(req, res) {
   try {
@@ -109,20 +95,11 @@ async function loginUser(req, res) {
     const user = await User.findOne({ email });
 
     if (!user) {
-      const risk = calculateRisk("UNKNOWN_USER_LOGIN");
-
       writeSecurityLog("UNKNOWN_USER_LOGIN", "Login attempted with unknown account", {
         email,
         ip: req.ip,
-        userAgent: req.headers["user-agent"] || "unknown",
-        riskScore: risk.score,
-        riskLevel: risk.riskLevel
+        userAgent: req.headers["user-agent"] || "unknown"
       });
-
-      await sendSecurityAlert(
-        "Shopcart Security Alert: Unknown User Login",
-        `Unknown user login attempt detected.\n\nEmail: ${email}\nIP: ${req.ip}\nUser-Agent: ${req.headers["user-agent"] || "unknown"}\nRisk Score: ${risk.score}\nRisk Level: ${risk.riskLevel}`
-      );
 
       return res.status(401).json({ message: "Invalid email or password" });
     }
@@ -130,41 +107,15 @@ async function loginUser(req, res) {
     const isMatch = await bcrypt.compare(password, user.password);
 
     if (!isMatch) {
-      const failedCount = trackFailedLogin(email);
-      const risk = calculateRisk("FAILED_LOGIN", { failedCount });
-
       writeSecurityLog("FAILED_LOGIN", "Invalid password attempt", {
         email,
         ip: req.ip,
         userAgent: req.headers["user-agent"] || "unknown",
-        isAdmin: user.isAdmin,
-        failedCount,
-        riskScore: risk.score,
-        riskLevel: risk.riskLevel
+        isAdmin: user.isAdmin
       });
-
-      if (failedCount >= 5) {
-        const bruteRisk = calculateRisk("BRUTE_FORCE_DETECTED", { failedCount });
-
-        writeSecurityLog("BRUTE_FORCE_DETECTED", "Multiple failed login attempts detected", {
-          email,
-          ip: req.ip,
-          userAgent: req.headers["user-agent"] || "unknown",
-          failedCount,
-          riskScore: bruteRisk.score,
-          riskLevel: bruteRisk.riskLevel
-        });
-
-        await sendSecurityAlert(
-          "Shopcart Security Alert: Brute Force Detected",
-          `Multiple failed login attempts detected.\n\nEmail: ${email}\nIP: ${req.ip}\nFailed Attempts: ${failedCount}\nUser-Agent: ${req.headers["user-agent"] || "unknown"}\nRisk Score: ${bruteRisk.score}\nRisk Level: ${bruteRisk.riskLevel}`
-        );
-      }
 
       return res.status(401).json({ message: "Invalid email or password" });
     }
-
-    resetFailedLogin(email);
 
     writeSecurityLog("SUCCESS_LOGIN", "User logged in successfully", {
       email: user.email,
@@ -220,21 +171,12 @@ async function makeMeAdmin(req, res) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    const risk = calculateRisk("ADMIN_PROMOTION");
-
     writeSecurityLog("ADMIN_PROMOTION", "User updated to admin", {
       email: user.email,
       ip: req.ip,
       userAgent: req.headers["user-agent"] || "unknown",
-      isAdmin: user.isAdmin,
-      riskScore: risk.score,
-      riskLevel: risk.riskLevel
+      isAdmin: user.isAdmin
     });
-
-    await sendSecurityAlert(
-      "Shopcart Security Alert: Admin Promotion",
-      `A user was promoted to admin.\n\nEmail: ${user.email}\nIP: ${req.ip}\nUser-Agent: ${req.headers["user-agent"] || "unknown"}\nRisk Score: ${risk.score}\nRisk Level: ${risk.riskLevel}`
-    );
 
     return res.json({
       message: "User updated to admin",
@@ -260,3 +202,7 @@ module.exports = {
   getProfile,
   makeMeAdmin
 };
+
+
+
+

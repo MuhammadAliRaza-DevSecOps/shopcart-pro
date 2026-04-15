@@ -11,7 +11,6 @@ const orderRoutes = require("./routes/orderRoutes");
 const client = require("prom-client");
 const app = express();
 const { sendSecurityAlert } = require("./utils/emailAlert");
-const { writeSecurityLog } = require("./utils/securityLogger");
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use(morgan("dev"));
@@ -28,8 +27,6 @@ const httpRequestDuration = new client.Histogram({
   labelNames: ["method", "route", "code"],
   buckets: [0.1, 0.3, 0.5, 1, 2, 5]
 });
-
-
 
 register.registerMetric(httpRequestDuration);
 
@@ -100,47 +97,3 @@ app.get("/api/test-email-alert", async (req, res) => {
     result,
   });
 });
-
-
-
-app.get("/api/trap/admin", async (req, res) => {
-  writeSecurityLog("HONEYPOT_ADMIN_TRAP", "Honeypot admin trap route accessed", {
-    ip: req.ip,
-    userAgent: req.headers["user-agent"] || "unknown",
-    path: req.originalUrl
-  });
-
-  await sendSecurityAlert(
-    "Shopcart Security Alert: Honeypot Trap Triggered",
-    `Honeypot admin trap route was accessed.\n\nIP: ${req.ip}\nUser-Agent: ${req.headers["user-agent"] || "unknown"}\nPath: ${req.originalUrl}`
-  );
-
-  return res.status(403).json({
-    message: "Access denied"
-  });
-});
-
-
-
-
-const trapHandler = async (req, res) => {
-  writeSecurityLog("HONEYPOT_TRIGGERED", "Fake sensitive route accessed", {
-    ip: req.ip,
-    path: req.originalUrl,
-    userAgent: req.headers["user-agent"] || "unknown"
-  });
-
-  await sendSecurityAlert(
-    "⚠️ Shopcart Honeypot Alert",
-    `Trap triggered!\n\nIP: ${req.ip}\nPath: ${req.originalUrl}\nUser-Agent: ${req.headers["user-agent"]}`
-  );
-
-  res.status(403).json({ message: "Access denied" });
-};
-
-// Common attack paths
-app.get("/wp-admin", trapHandler);
-app.get("/phpmyadmin", trapHandler);
-app.get("/admin-panel", trapHandler);
-app.get("/.env", trapHandler);
-app.get("/config", trapHandler);
