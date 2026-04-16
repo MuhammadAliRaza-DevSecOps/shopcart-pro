@@ -1,0 +1,14 @@
+services:
+  backend:
+    ports: []
+    expose:
+      - "5000"
+
+  frontend:
+    ports: []
+
+  prometheus:
+    ports: []
+
+  grafana:
+    ports: []
