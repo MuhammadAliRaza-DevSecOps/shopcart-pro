@@ -3,43 +3,121 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Panel - ShopCart Pro</title>
+  <title>Admin Panel — ShopCart Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="logo">ShopCart Pro</div>
-    <nav class="nav" id="site-nav"></nav>
-  </header>
 
-  <section class="section">
-    <h2>Admin Dashboard</h2>
+<div class="sp-cursor" id="spCursor"></div>
+<div class="sp-cursor-ring" id="spCursorRing"></div>
+<div id="sp-loader"><div class="loader-ring"></div><div class="loader-brand">ShopCart<span style="color:var(--gold)">Pro</span></div></div>
+<div id="sp-toast-container"></div>
 
-    <div class="auth-card" style="max-width:100%;">
-      <h3>Add Product</h3>
-      <form id="adminProductForm" class="amazon-auth-form">
-        <input type="text" id="productName" placeholder="Product name" required />
-        <input type="number" id="productPrice" placeholder="Price" required />
-        <input type="text" id="productCategory" placeholder="Category" required />
-        <input type="number" step="0.1" id="productRating" placeholder="Rating" />
-        <input type="number" id="productStock" placeholder="Stock" />
-        <input type="text" id="productImage" placeholder="Image URL" required />
-        <input type="text" id="productDescription" placeholder="Description" required />
-        <input type="hidden" id="editProductId" />
-        <button type="submit" class="amazon-btn" id="adminSubmitBtn">Add Product</button>
-      </form>
-      <p id="adminMessage" class="auth-message"></p>
+<header class="topbar" id="topbar">
+  <a href="index.html" class="logo">ShopCart<span>Pro</span></a>
+  <nav class="nav" id="site-nav"></nav>
+  <button class="sp-hamburger" id="spHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div style="height:68px;"></div>
+
+<div style="background:var(--bg-2);border-bottom:1px solid var(--border);padding:36px 40px 28px;">
+  <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div>
+      <div class="section-label">Admin</div>
+      <h1 style="font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);margin-top:8px;">Dashboard</h1>
     </div>
-
-    <div class="section" style="padding-left:0;padding-right:0;">
-      <h3>All Products</h3>
-      <div id="admin-products-grid" class="product-grid"></div>
+    <div style="display:flex;gap:12px;">
+      <a href="admin-orders.html" class="btn btn-ghost btn-sm">Manage Orders →</a>
     </div>
-  </section>
+  </div>
+</div>
 
-  <script src="js/api.js"></script>
-  <script src="js/navbar.js"></script>
-  <script src="js/admin.js"></script>
+<section class="section" style="padding-top:48px;">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div class="admin-wrapper">
+
+      <!-- Sidebar -->
+      <div class="admin-sidebar">
+        <h3>Navigation</h3>
+        <a href="admin.html" class="active">📦 Products</a>
+        <a href="admin-orders.html">🛒 Orders</a>
+        <a href="index.html">🏠 Storefront</a>
+      </div>
+
+      <!-- Main content -->
+      <div>
+        <!-- Add Product Form -->
+        <!-- PRESERVED: all IDs admin.js needs -->
+        <div class="auth-card" style="margin-bottom:32px;">
+          <h3>Add / Edit Product</h3>
+          <form id="adminProductForm" class="amazon-auth-form" style="display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;">
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <label for="productName">Product Name</label>
+              <input type="text" id="productName" placeholder="Product name" required />
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <label for="productPrice">Price (PKR)</label>
+              <input type="number" id="productPrice" placeholder="0" required />
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <label for="productCategory">Category</label>
+              <input type="text" id="productCategory" placeholder="Electronics, Fashion…" required />
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <label for="productRating">Rating (0–5)</label>
+              <input type="number" step="0.1" id="productRating" placeholder="4.5" />
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <label for="productStock">Stock</label>
+              <input type="number" id="productStock" placeholder="100" />
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <label for="productImage">Image URL</label>
+              <input type="text" id="productImage" placeholder="https://…" required />
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;grid-column:1/-1;">
+              <label for="productDescription">Description</label>
+              <input type="text" id="productDescription" placeholder="Product description" required />
+            </div>
+            <input type="hidden" id="editProductId" />
+            <div style="grid-column:1/-1;">
+              <button type="submit" class="amazon-btn" id="adminSubmitBtn" style="margin-top:0;">Add Product</button>
+            </div>
+          </form>
+          <!-- PRESERVED: exact ID adminMessage -->
+          <p id="adminMessage" class="auth-message"></p>
+        </div>
+
+        <!-- Products Grid -->
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;">
+            <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;">All Products</h2>
+          </div>
+          <!-- PRESERVED: exact ID admin-products-grid -->
+          <div id="admin-products-grid" class="product-grid"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;padding:22px 40px;">
+    <p>© 2026 ShopCart Pro Admin Panel. Access restricted.</p>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/sp-core.js"></script>
+<script src="js/admin.js"></script>
 </body>
 </html>

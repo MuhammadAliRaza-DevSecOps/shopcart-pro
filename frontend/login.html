@@ -3,42 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - ShopCart Pro</title>
+  <title>Sign In — ShopCart Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body class="auth-page">
-  <div class="auth-wrapper">
-    <div class="auth-logo">ShopCart Pro</div>
 
-    <div class="amazon-auth-card">
-      <h1>Sign in</h1>
+<div class="sp-cursor" id="spCursor"></div>
+<div class="sp-cursor-ring" id="spCursorRing"></div>
+<div id="sp-toast-container"></div>
+<div class="auth-orb auth-orb-1"></div>
+<div class="auth-orb auth-orb-2"></div>
 
-      <form id="loginForm" class="amazon-auth-form">
-        <label for="loginEmail">Email</label>
-        <input type="email" id="loginEmail" placeholder="Enter your email" required />
+<div class="auth-wrapper">
+  <a href="index.html" class="auth-logo">ShopCart<span>Pro</span></a>
 
-        <label for="loginPassword">Password</label>
-        <input type="password" id="loginPassword" placeholder="Enter your password" required />
+  <div class="amazon-auth-card" style="position:relative;">
+    <h1>Sign in</h1>
 
-        <button type="submit" class="amazon-btn">Sign in</button>
-      </form>
+    <!-- PRESERVED: exact form + IDs auth.js needs -->
+    <form id="loginForm" class="amazon-auth-form">
+      <label for="loginEmail">Email address</label>
+      <input type="email" id="loginEmail" placeholder="you@example.com" required autocomplete="email" />
 
-      <p id="loginMessage" class="auth-message"></p>
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" placeholder="••••••••" required autocomplete="current-password" />
 
-      <p class="auth-small-text">
-        By continuing, you agree to ShopCart Pro's conditions of use and privacy notice.
-      </p>
+      <button type="submit" class="amazon-btn">Sign in</button>
+    </form>
+
+    <!-- PRESERVED: exact ID loginMessage -->
+    <p id="loginMessage" class="auth-message"></p>
+
+    <!-- SECURITY UI: visual attempt tracker (enhanced, logic stays in auth.js + backend) -->
+    <div class="auth-attempts-bar" id="attemptsBar" style="display:none;">
+      <div class="auth-attempts-label">Login Security</div>
+      <div class="attempts-track">
+        <div class="attempts-fill" id="attemptsFill" style="width:0%;"></div>
+      </div>
+      <span id="attemptsText" style="font-size:0.72rem;color:var(--text-3);">0 / 5 attempts</span>
+      <br/>
+      <span class="risk-badge low" id="riskBadge" style="display:none;">🟢 Risk: Low</span>
     </div>
 
-    <div class="auth-divider">
-      <span>New to ShopCart Pro?</span>
-    </div>
-
-    <a href="register.html" class="amazon-secondary-btn">Create your ShopCart Pro account</a>
+    <p class="auth-small-text">
+      By signing in, you agree to ShopCart Pro's conditions of use and privacy notice.<br>
+      <span style="color:var(--text-3);font-size:0.7rem;">🔒 SSL secured · Wazuh monitored · Attempts logged</span>
+    </p>
   </div>
 
-  <script src="js/api.js"></script>
-  <script src="js/auth.js"></script>
+  <div class="auth-divider"><span>New to ShopCart Pro?</span></div>
+  <a href="register.html" class="amazon-secondary-btn">Create your ShopCart Pro account</a>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/sp-core.js"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+@media (max-width: 992px) {
+  .product-grid,
+  .category-grid,
+  .product-detail {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .product-grid,
+  .category-grid,
+  .product-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+}

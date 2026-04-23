@@ -3,38 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products - ShopCart Pro</title>
+  <title>Products — ShopCart Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="logo">ShopCart Pro</div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="cart.html">Cart</a>
-    </nav>
-  </header>
 
-  <section class="section">
-    <div class="filters">
-      <input type="text" id="searchInput" placeholder="Search products..." />
-      <select id="categoryFilter">
-        <option value="">All Categories</option>
-        <option value="Electronics">Electronics</option>
-        <option value="Accessories">Accessories</option>
-        <option value="Wearables">Wearables</option>
-        <option value="Fashion">Fashion</option>
-      </select>
-      <button id="filterBtn" class="btn">Apply</button>
+<div class="sp-cursor" id="spCursor"></div>
+<div class="sp-cursor-ring" id="spCursorRing"></div>
+<div id="sp-loader"><div class="loader-ring"></div><div class="loader-brand">ShopCart<span style="color:var(--gold)">Pro</span></div></div>
+<div id="sp-toast-container"></div>
+
+<header class="topbar" id="topbar">
+  <a href="index.html" class="logo">ShopCart<span>Pro</span></a>
+  <nav class="nav" id="site-nav"></nav>
+  <button class="sp-hamburger" id="spHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div style="height:68px;"></div>
+
+<!-- Page header -->
+<div style="background:var(--bg-2);border-bottom:1px solid var(--border);padding:40px 40px 32px;">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div class="section-label">Store</div>
+    <h1 style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);margin-top:8px;">All Products</h1>
+  </div>
+</div>
+
+<section class="section" style="padding-top:40px;">
+  <!-- PRESERVED: exact IDs searchInput, categoryFilter, filterBtn -->
+  <div class="filters">
+    <input type="text" id="searchInput" placeholder="🔍 Search products…" />
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Accessories">Accessories</option>
+      <option value="Wearables">Wearables</option>
+      <option value="Fashion">Fashion</option>
+    </select>
+    <button id="filterBtn" class="btn">Apply Filters</button>
+  </div>
+
+  <!-- PRESERVED: exact ID products-grid -->
+  <div id="products-grid" class="product-grid"></div>
+</section>
+
+<footer>
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;padding:22px 40px;">
+    <p>© 2026 ShopCart Pro. All rights reserved.</p>
+    <div class="footer-trust">
+      <span>🔒 SSL Secure</span><span>⚡ Fast</span><span>✅ Verified</span>
     </div>
+  </div>
+</footer>
 
-    <div id="products-grid" class="product-grid"></div>
-  </section>
-
-  <script src="js/api.js"></script>
-  <script src="js/navbar.js"></script>
-  <script src="js/products.js"></script>
+<script src="js/api.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/sp-core.js"></script>
+<script src="js/products.js"></script>
 </body>
 </html>

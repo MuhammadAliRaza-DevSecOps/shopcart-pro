@@ -3,27 +3,81 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Orders - ShopCart Pro</title>
+  <title>Manage Orders — ShopCart Pro Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="logo">ShopCart Pro</div>
-    <nav class="nav" id="site-nav"></nav>
-  </header>
 
-  <section class="section">
-    <h2>Manage Orders</h2>
-    <div id="admin-orders-list" class="orders-grid">
-      <div class="order-card">
-        <p>Loading orders...</p>
-      </div>
+<div class="sp-cursor" id="spCursor"></div>
+<div class="sp-cursor-ring" id="spCursorRing"></div>
+<div id="sp-loader"><div class="loader-ring"></div><div class="loader-brand">ShopCart<span style="color:var(--gold)">Pro</span></div></div>
+<div id="sp-toast-container"></div>
+
+<header class="topbar" id="topbar">
+  <a href="index.html" class="logo">ShopCart<span>Pro</span></a>
+  <nav class="nav" id="site-nav"></nav>
+  <button class="sp-hamburger" id="spHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div style="height:68px;"></div>
+
+<div style="background:var(--bg-2);border-bottom:1px solid var(--border);padding:36px 40px 28px;">
+  <div style="max-width:1320px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div>
+      <div class="section-label">Admin</div>
+      <h1 style="font-family:'DM Serif Display',serif;font-size:clamp(1.6rem,3vw,2.3rem);margin-top:8px;">Manage Orders</h1>
     </div>
-  </section>
+    <a href="admin.html" class="btn btn-ghost btn-sm">← Back to Products</a>
+  </div>
+</div>
 
-  <script src="js/api.js"></script>
-  <script src="js/navbar.js"></script>
-  <script src="js/admin-orders.js"></script>
+<section class="section" style="padding-top:48px;">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div class="admin-wrapper">
+
+      <!-- Sidebar -->
+      <div class="admin-sidebar">
+        <h3>Navigation</h3>
+        <a href="admin.html">📦 Products</a>
+        <a href="admin-orders.html" class="active">🛒 Orders</a>
+        <a href="index.html">🏠 Storefront</a>
+      </div>
+
+      <!-- Orders list -->
+      <div>
+        <div style="margin-bottom:24px;">
+          <h2 style="font-family:'DM Serif Display',serif;font-size:1.5rem;">All Customer Orders</h2>
+        </div>
+        <!-- PRESERVED: exact ID admin-orders-list that admin-orders.js targets -->
+        <div id="admin-orders-list" class="orders-grid">
+          <div class="order-card">
+            <div style="text-align:center;padding:32px 0;">
+              <div class="loader-ring" style="margin:0 auto 16px;"></div>
+              <p style="color:var(--text-2);">Loading orders…</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;padding:22px 40px;">
+    <p>© 2026 ShopCart Pro Admin Panel. Access restricted.</p>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/sp-core.js"></script>
+<script src="js/admin-orders.js"></script>
 </body>
 </html>

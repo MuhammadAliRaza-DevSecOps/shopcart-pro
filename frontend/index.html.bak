@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShopCart Pro</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">ShopCart Pro</div>
+    <nav class="nav" id="site-nav"></nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Everything you need in one smart store</h1>
+      <p>Professional shopping experience with trending products, modern design, and fast browsing.</p>
+      <a href="products.html" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Featured Categories</h2>
+    <div class="category-grid">
+      <div class="category-card">Electronics</div>
+      <div class="category-card">Accessories</div>
+      <div class="category-card">Wearables</div>
+      <div class="category-card">Fashion</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Featured Products</h2>
+      <a href="products.html">View All</a>
+    </div>
+    <div id="featured-products" class="product-grid"></div>
+  </section>
+
+  <script src="js/api.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

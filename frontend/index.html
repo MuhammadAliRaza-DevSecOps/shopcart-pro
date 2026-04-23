@@ -3,45 +3,269 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShopCart Pro</title>
+  <title>ShopCart Pro — Premium E-Commerce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="logo">ShopCart Pro</div>
-    <nav class="nav" id="site-nav"></nav>
-  </header>
 
-  <section class="hero">
+<!-- CURSOR -->
+<div class="sp-cursor" id="spCursor"></div>
+<div class="sp-cursor-ring" id="spCursorRing"></div>
+
+<!-- LOADER -->
+<div id="sp-loader">
+  <div class="loader-ring"></div>
+  <div class="loader-brand">ShopCart<span style="color:var(--gold)">Pro</span></div>
+</div>
+
+<!-- TOAST -->
+<div id="sp-toast-container"></div>
+
+<!-- NAVBAR -->
+<header class="topbar" id="topbar">
+  <a href="index.html" class="logo">ShopCart<span>Pro</span></a>
+  <nav class="nav" id="site-nav"></nav>
+  <button class="sp-hamburger" id="spHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
+  <div class="hero-inner">
     <div class="hero-content">
-      <h1>Everything you need in one smart store</h1>
-      <p>Professional shopping experience with trending products, modern design, and fast browsing.</p>
-      <a href="products.html" class="btn">Shop Now</a>
+      <div class="hero-pill">
+        <span class="hero-pill-dot">✦</span>
+        New Season 2026
+      </div>
+
+      <h1>
+        <span class="line-wrap"><span class="line-inner">Everything</span></span>
+        <span class="line-wrap"><span class="line-inner accent">Premium.</span></span>
+        <span class="line-wrap"><span class="line-inner">One Store.</span></span>
+      </h1>
+
+      <p>Curated collections, unmatched quality, and a shopping experience built for the modern world. Fast. Secure. Premium.</p>
+
+      <div class="hero-cta">
+        <a href="products.html" class="btn">Shop Collection →</a>
+        <a href="register.html" class="btn-ghost">Join Free</a>
+      </div>
+
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num" data-count="12000">0</div>
+          <div class="hero-stat-label">Products</div>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div>
+          <div class="hero-stat-num" data-count="98">0</div>
+          <div class="hero-stat-label">% Satisfied</div>
+        </div>
+        <div class="hero-stat-div"></div>
+        <div>
+          <div class="hero-stat-num" data-count="150">0</div>
+          <div class="hero-stat-label">Brands</div>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <section class="section">
-    <h2>Featured Categories</h2>
-    <div class="category-grid">
-      <div class="category-card">Electronics</div>
-      <div class="category-card">Accessories</div>
-      <div class="category-card">Wearables</div>
-      <div class="category-card">Fashion</div>
+    <!-- 3D Visual -->
+    <div class="hero-visual">
+      <div class="stage">
+        <div class="stage-ring"></div>
+        <div class="stage-ring"></div>
+        <div class="stage-ring"></div>
+        <div class="stage-card">
+          <div class="stage-card-img">
+            <div class="css-cube-wrap">
+              <div class="css-cube">
+                <div class="f front"></div><div class="f back"></div>
+                <div class="f left"></div><div class="f right"></div>
+                <div class="f top"></div><div class="f bottom"></div>
+              </div>
+            </div>
+          </div>
+          <div class="stage-card-info">
+            <span class="stage-card-tag">Trending</span>
+            <div class="stage-card-name">Premium Collection 2026</div>
+            <div class="stage-price-row">
+              <span class="stage-price">$299</span>
+              <button class="stage-add-btn">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="float-chip float-chip-a">🔥 Top Seller</div>
+        <div class="float-chip float-chip-b">⭐ 4.9 Rating</div>
+        <div class="float-chip float-chip-c">🚚 Free Shipping</div>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <div class="section-head">
-      <h2>Featured Products</h2>
-      <a href="products.html">View All</a>
+  <div class="scroll-cue">
+    <div class="scroll-cue-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Premium Quality</span><span class="dot">◆</span>
+    <span>Fast Delivery</span><span class="dot">◆</span>
+    <span>Secure Checkout</span><span class="dot">◆</span>
+    <span>24/7 Support</span><span class="dot">◆</span>
+    <span>Easy Returns</span><span class="dot">◆</span>
+    <span>Best Prices</span><span class="dot">◆</span>
+    <span>Verified Products</span><span class="dot">◆</span>
+    <span>Premium Quality</span><span class="dot">◆</span>
+    <span>Fast Delivery</span><span class="dot">◆</span>
+    <span>Secure Checkout</span><span class="dot">◆</span>
+    <span>24/7 Support</span><span class="dot">◆</span>
+    <span>Easy Returns</span><span class="dot">◆</span>
+    <span>Best Prices</span><span class="dot">◆</span>
+    <span>Verified Products</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section" id="categories">
+  <div class="section-label">Browse By</div>
+  <div class="section-head">
+    <h2>Shop Categories</h2>
+    <a href="products.html">View All →</a>
+  </div>
+  <div class="category-grid">
+    <div class="category-card reveal" onclick="window.location.href='products.html?category=Electronics'">
+      <span class="category-card-icon">📱</span>
+      <div class="category-card-name">Electronics</div>
+      <div class="category-card-count">240+ Items</div>
+      <div class="category-card-glow"></div>
     </div>
-    <div id="featured-products" class="product-grid"></div>
-  </section>
+    <div class="category-card reveal reveal-d1" onclick="window.location.href='products.html?category=Fashion'">
+      <span class="category-card-icon">👗</span>
+      <div class="category-card-name">Fashion</div>
+      <div class="category-card-count">580+ Items</div>
+      <div class="category-card-glow"></div>
+    </div>
+    <div class="category-card reveal reveal-d2" onclick="window.location.href='products.html?category=Accessories'">
+      <span class="category-card-icon">⌚</span>
+      <div class="category-card-name">Accessories</div>
+      <div class="category-card-count">320+ Items</div>
+      <div class="category-card-glow"></div>
+    </div>
+    <div class="category-card reveal reveal-d3" onclick="window.location.href='products.html?category=Wearables'">
+      <span class="category-card-icon">🎧</span>
+      <div class="category-card-name">Wearables</div>
+      <div class="category-card-count">190+ Items</div>
+      <div class="category-card-glow"></div>
+    </div>
+  </div>
+</section>
 
-  <script src="js/api.js"></script>
-  <script src="js/navbar.js"></script>
-  <script src="js/main.js"></script>
+<!-- FEATURED PRODUCTS -->
+<section class="section" id="featured" style="padding-top: 0;">
+  <div class="section-head">
+    <h2>Featured Products</h2>
+    <a href="products.html">View All →</a>
+  </div>
+  <!-- PRESERVED: exact ID "featured-products" that main.js targets -->
+  <div id="featured-products" class="product-grid"></div>
+</section>
 
+<!-- PROMO BAND -->
+<div class="promo-band">
+  <div class="promo-band-inner">
+    <div class="promo-band-content reveal">
+      <span class="promo-band-tag">Limited Time</span>
+      <h2>Up to <em>50% Off</em><br>Summer Sale</h2>
+      <p>Exclusive deals on thousands of premium products. Don't miss out on the season's biggest event.</p>
+      <a href="products.html" class="btn">Shop the Sale →</a>
+    </div>
+    <div class="promo-visual">
+      <div class="promo-3d-text">SALE</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features-strip">
+  <div class="feature-tile reveal">
+    <span class="feature-tile-icon">🚀</span>
+    <h4>Express Delivery</h4>
+    <p>Get your order in under 24 hours with our premium shipping network.</p>
+  </div>
+  <div class="feature-tile reveal reveal-d1">
+    <span class="feature-tile-icon">🔒</span>
+    <h4>Secure Payments</h4>
+    <p>256-bit SSL encryption keeps your financial data safe at all times.</p>
+  </div>
+  <div class="feature-tile reveal reveal-d2">
+    <span class="feature-tile-icon">↩️</span>
+    <h4>Easy Returns</h4>
+    <p>30-day no-questions-asked return policy on all purchases.</p>
+  </div>
+  <div class="feature-tile reveal reveal-d3">
+    <span class="feature-tile-icon">🏆</span>
+    <h4>Quality Guarantee</h4>
+    <p>Every product is verified and quality-checked before dispatch.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" style="font-size:1.5rem;">ShopCart<span>Pro</span></a>
+      <p>Premium e-commerce experience. Curated products, unmatched quality, delivered fast and securely.</p>
+      <div class="footer-social">
+        <a href="#">tw</a><a href="#">ig</a><a href="#">fb</a><a href="#">yt</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <a href="products.html">All Products</a>
+      <a href="products.html?category=Electronics">Electronics</a>
+      <a href="products.html?category=Fashion">Fashion</a>
+      <a href="products.html?category=Accessories">Accessories</a>
+    </div>
+    <div class="footer-col">
+      <h5>Account</h5>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="orders.html">My Orders</a>
+      <a href="cart.html">Cart</a>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <a href="#">Help Center</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Returns Policy</a>
+      <a href="#">Shipping Info</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 ShopCart Pro. All rights reserved.</p>
+    <div class="footer-trust">
+      <span>🔒 SSL Secure</span>
+      <span>⚡ Fast</span>
+      <span>✅ Verified</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/main.js"></script>
+<script src="js/sp-core.js"></script>
+<script src="js/auth.js"></script>
 </body>
 </html>

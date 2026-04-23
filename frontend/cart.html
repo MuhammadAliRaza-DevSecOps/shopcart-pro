@@ -3,29 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cart - ShopCart Pro</title>
+  <title>Cart — ShopCart Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="logo">ShopCart Pro</div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="cart.html">Cart</a>
-    </nav>
-  </header>
 
-  <section class="section">
-    <h2>Your Cart</h2>
-    <div id="cart-items" class="cart-list"></div>
-    <div class="cart-summary">
-      <h3 id="cart-total">Total: PKR 0</h3>
-    <a href="checkout.html" class="btn">Proceed to Checkout</a>
+<div class="sp-cursor" id="spCursor"></div>
+<div class="sp-cursor-ring" id="spCursorRing"></div>
+<div id="sp-loader"><div class="loader-ring"></div><div class="loader-brand">ShopCart<span style="color:var(--gold)">Pro</span></div></div>
+<div id="sp-toast-container"></div>
+
+<header class="topbar" id="topbar">
+  <a href="index.html" class="logo">ShopCart<span>Pro</span></a>
+  <nav class="nav" id="site-nav"></nav>
+  <button class="sp-hamburger" id="spHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div style="height:68px;"></div>
+
+<div style="background:var(--bg-2);border-bottom:1px solid var(--border);padding:36px 40px 28px;">
+  <div style="max-width:1320px;margin:0 auto;">
+    <div class="section-label">Checkout</div>
+    <h1 style="font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.5rem);margin-top:8px;">Your Cart</h1>
+  </div>
+</div>
+
+<section class="section" style="padding-top:48px;">
+  <div style="max-width:1320px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start;">
+    <div>
+      <!-- PRESERVED: exact ID cart-items that cart.js targets -->
+      <div id="cart-items" class="cart-list"></div>
     </div>
-  </section>
+    <div class="cart-summary" style="position:sticky;top:90px;">
+      <!-- PRESERVED: exact ID cart-total that cart.js targets -->
+      <h3 id="cart-total">Total: PKR 0</h3>
+      <a href="checkout.html">Proceed to Checkout →</a>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
+        <div style="font-size:0.72rem;color:var(--text-3);display:flex;flex-direction:column;gap:6px;">
+          <span>🔒 Secure SSL checkout</span>
+          <span>🚚 Free shipping on orders over PKR 2,000</span>
+          <span>↩️ 30-day easy returns</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="js/cart.js"></script>
-  <script src="js/navbar.js"></script>
+<footer>
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;padding:22px 40px;">
+    <p>© 2026 ShopCart Pro. All rights reserved.</p>
+    <div class="footer-trust"><span>🔒 SSL Secure</span><span>⚡ Fast</span></div>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/sp-core.js"></script>
+<script src="js/cart.js"></script>
 </body>
 </html>
