@@ -3,12 +3,12 @@ const { writeSecurityLog } = require("../utils/securityLogger");
 const { sendSecurityAlert } = require("../utils/emailAlert");
 
 const loginLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
+  windowMs: 30 * 1000, // 30 seconds
   max: 5,
   standardHeaders: true,
   legacyHeaders: false,
   message: {
-    message: "Too many login attempts. Please try again after 15 minutes."
+    message: "Too many login attempts. Please try again after 30 seconds."
   },
   handler: async (req, res) => {
     writeSecurityLog("RATE_LIMIT_TRIGGERED", "Too many login attempts detected", {
@@ -23,7 +23,7 @@ const loginLimiter = rateLimit({
     );
 
     return res.status(429).json({
-      message: "Too many login attempts. Please try again after 15 minutes."
+      message: "Too many login attempts. Please try again after 30 seconds."
     });
   }
 });

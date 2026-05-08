@@ -12,7 +12,7 @@
 /* ── SECURITY UI STATE ─────────────────────────────────────── */
 var loginAttempts = 0;
 var maxAttempts   = 5;  // mirrors backend loginLimiter
-var lockDuration  = 15; // minutes — matches backend setting
+var lockDuration  = 0.5; // minutes — matches backend setting
 
 function updateAttemptsUI() {
   var bar  = document.getElementById("attemptsBar");
@@ -157,7 +157,7 @@ if (loginForm) {
         // Locked (429 Too Many Requests from backend loginLimiter)
         if (response.status === 429) {
           showAuthMessage("loginMessage",
-            data.message || "Too many attempts. Account locked for 15 minutes.",
+            data.message || "Too many attempts. Account locked for 30 seconds.",
             "error"
           );
           showLockOverlay(lockDuration);
