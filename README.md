@@ -574,93 +574,6 @@ Modern software teams face a critical challenge: **speed vs. security**. Traditi
 
 ---
 
-## 📸 Screenshots
-
-> 📌 Replace the placeholder URLs below with actual screenshot links after uploading to Imgur, GitHub Issues, or any CDN.
-
-<br/>
-
-### 🔷 Jenkins Pipeline Dashboard
-
-<div align="center">
-<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Jenkins Pipeline — Stages View"/>
-<sub><i>Figure 1: Jenkins multistage pipeline showing all build, test, scan, and deploy stages</i></sub>
-</div>
-
-<br/>
-
-### 🔷 SonarQube Analysis Report
-
-<div align="center">
-<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="SonarQube SAST Analysis Dashboard"/>
-<sub><i>Figure 2: SonarQube code quality gate results — bugs, vulnerabilities, code smells</i></sub>
-</div>
-
-<br/>
-
-### 🔷 Trivy Container Scan Results
-
-<div align="center">
-<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Trivy Image Vulnerability Report"/>
-<sub><i>Figure 3: Trivy CVE scan output — severity breakdown for Docker image layers</i></sub>
-</div>
-
-<br/>
-
-### 🔷 Kubernetes Cluster — Running Pods
-
-<div align="center">
-<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Kubernetes Pods and Services"/>
-<sub><i>Figure 4: kubectl output showing all pods, services, and deployments across namespaces</i></sub>
-</div>
-
-<br/>
-
-### 🔷 Grafana Monitoring Dashboard
-
-<div align="center">
-<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Grafana Live Monitoring Dashboard"/>
-<sub><i>Figure 5: Grafana dashboard — CPU, memory, pod health, and request rate metrics</i></sub>
-</div>
-
-<br/>
-
-### 🔷 Wazuh SIEM — Threat Detection
-
-<div align="center">
-<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Wazuh SIEM Alerts and Events"/>
-<sub><i>Figure 6: Wazuh SIEM event correlation — real-time alerts and intrusion detection logs</i></sub>
-</div>
-
-<br/>
-
-### 🔷 Honeypot Activity Log
-
-<div align="center">
-<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Honeypot Attack Logs"/>
-<sub><i>Figure 7: Honeypot captured attacker fingerprints and unauthorized access attempts</i></sub>
-</div>
-
-<br/>
-
-### 🔷 AWS Console — EC2 & VPC Setup
-
-<div align="center">
-<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="AWS EC2 and VPC Configuration"/>
-<sub><i>Figure 8: AWS console showing provisioned EC2 instances, VPC subnets, and security groups</i></sub>
-</div>
-
-<br/>
-
-### 🔷 HPA Auto-Scaling in Action
-
-<div align="center">
-<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="HPA Horizontal Pod Autoscaler Scaling Event"/>
-<sub><i>Figure 9: HPA scaling event — pods scaled from 2 to 8 under load testing conditions</i></sub>
-</div>
-
----
-
 ## 🧪 Testing & Results
 
 ### ✅ Pipeline Validation
@@ -776,17 +689,11 @@ Modern software teams face a critical challenge: **speed vs. security**. Traditi
 > *"Security is not a product, but a process — automate it."*
 
 <br/>
-
-**🎓 Institution:** National College of Business Administration & Economics (NCBA&E)
-
-**📁 Project:** AUTOSECOPS — Final Year Project (FYP)
-
-**📧 Contact:** [your-email@domain.com](mailto:your-email@domain.com)
-
-**🔗 LinkedIn:** [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
-
-**🐙 GitHub:** [github.com/your-username](https://github.com/your-username)
-
+🎓 Institution: National College of Business Administration & Economics (NCBA&E)
+📁 Project: AUTOSECOPS — Final Year Project (FYP)
+📧 Contact: infoman55.it@gmail.com
+🔗 LinkedIn: linkedin.com/in/ali-raza-0b9b52228
+🐙 GitHub: MuhammadAliRaza-DevSecOps
 <br/>
 
 ---
