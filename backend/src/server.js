@@ -10,6 +10,7 @@ const authRoutes = require("./routes/authRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const client = require("prom-client");
 const app = express();
+app.set("trust proxy", true);
 const { sendSecurityAlert } = require("./utils/emailAlert");
 const { writeSecurityLog } = require("./utils/securityLogger");
 app.use(cors({ origin: "*" }));
