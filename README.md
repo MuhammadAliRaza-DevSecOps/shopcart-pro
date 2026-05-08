@@ -1,695 +1,802 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=venom&color=0:0A0E2A,30:0D1540,60:1A2260,100:00D4FF&height=280&section=header&text=AUTOSECOPS&fontSize=90&fontColor=00D4FF&fontAlignY=42&desc=Automate%20%E2%80%A2%20Secure%20%E2%80%A2%20Deploy&descSize=26&descColor=ffffff&descAlignY=62&animation=twinkling&reversal=true" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=AUTOSECOPS&fontSize=72&fontColor=00d4ff&fontAlignY=38&desc=Automate%20%7C%20Secure%20%7C%20Deploy&descAlignY=58&descSize=22&descColor=a78bfa&animation=fadeIn" width="100%" alt="AUTOSECOPS Banner"/>
 
 <br/>
 
-<p>
-<img src="https://img.shields.io/badge/Build-Passing-00E676?style=for-the-badge&logo=github-actions&logoColor=white"/>
-<img src="https://img.shields.io/badge/Security-DevSecOps-00D4FF?style=for-the-badge&logo=springsecurity&logoColor=white"/>
-<img src="https://img.shields.io/badge/Kubernetes-Orchestrated-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white"/>
-<img src="https://img.shields.io/badge/AWS-Cloud%20Ready-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
-</p>
-
-<p>
-<img src="https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?style=for-the-badge&logo=jenkins&logoColor=white"/>
-<img src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-<img src="https://img.shields.io/badge/SonarQube-SAST-4E9BCD?style=for-the-badge&logo=sonarqube&logoColor=white"/>
-<img src="https://img.shields.io/badge/Trivy-CVE%20Scanner-1904DA?style=for-the-badge&logo=aqua&logoColor=white"/>
-</p>
-
-<p>
-<img src="https://img.shields.io/badge/Helm-Package%20Manager-0F1689?style=for-the-badge&logo=helm&logoColor=white"/>
-<img src="https://img.shields.io/badge/Prometheus-Monitoring-E6522C?style=for-the-badge&logo=prometheus&logoColor=white"/>
-<img src="https://img.shields.io/badge/Grafana-Dashboards-F46800?style=for-the-badge&logo=grafana&logoColor=white"/>
-<img src="https://img.shields.io/badge/Wazuh-SIEM%20%2B%20HIDS-006064?style=for-the-badge&logo=elastic&logoColor=white"/>
-</p>
-
-<p>
-<img src="https://img.shields.io/badge/Ansible-Automation-EE0000?style=for-the-badge&logo=ansible&logoColor=white"/>
-<img src="https://img.shields.io/badge/GitHub-Source%20Control-181717?style=for-the-badge&logo=github&logoColor=white"/>
-<img src="https://img.shields.io/badge/Pipeline%20Speed-~2%20Minutes-00E676?style=for-the-badge&logo=lightning&logoColor=white"/>
-<img src="https://img.shields.io/badge/Tools-100%25%20Open%20Source-7B2FBE?style=for-the-badge&logo=opensourceinitiative&logoColor=white"/>
-</p>
+![Version](https://img.shields.io/badge/Version-1.0.0-00d4ff?style=for-the-badge&logo=semver&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-a78bfa?style=for-the-badge&logo=open-source-initiative&logoColor=white)
+![DevSecOps](https://img.shields.io/badge/DevSecOps-Automation-22d3ee?style=for-the-badge&logo=shield&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-4ade80?style=for-the-badge&logo=checkmarx&logoColor=white)
+![FYP](https://img.shields.io/badge/FYP-NCBA%26E-f97316?style=for-the-badge&logo=graduation-cap&logoColor=white)
 
 <br/>
 
-<a href="https://git.io/typing-svg">
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=20&duration=2500&pause=800&color=00D4FF&center=true&vCenter=true&multiline=true&repeat=true&width=800&height=110&lines=🔐+Security+embedded+at+EVERY+pipeline+stage;🚀+Code+Push+→+Secure+Deploy+in+~2+Minutes;☁️+On-Premises+%2B+AWS+Cloud+—+One+Pipeline;🛡️+Zero+Vulnerabilities+reach+Production" alt="Typing SVG"/>
-</a>
+![GitHub](https://img.shields.io/badge/GitHub-Actions-181717?style=flat-square&logo=github&logoColor=white)
+![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?style=flat-square&logo=jenkins&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Containers-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-Cloud-FF9900?style=flat-square&logo=amazon-aws&logoColor=white)
+![Ansible](https://img.shields.io/badge/Ansible-Automation-EE0000?style=flat-square&logo=ansible&logoColor=white)
+![Prometheus](https://img.shields.io/badge/Prometheus-Monitoring-E6522C?style=flat-square&logo=prometheus&logoColor=white)
+![Grafana](https://img.shields.io/badge/Grafana-Dashboards-F46800?style=flat-square&logo=grafana&logoColor=white)
+![SonarQube](https://img.shields.io/badge/SonarQube-SAST-4E9BCD?style=flat-square&logo=sonarqube&logoColor=white)
+![Trivy](https://img.shields.io/badge/Trivy-Security-1904DA?style=flat-square&logo=aqua&logoColor=white)
+![Wazuh](https://img.shields.io/badge/Wazuh-SIEM-005571?style=flat-square&logo=elastic&logoColor=white)
+![Helm](https://img.shields.io/badge/Helm-Package%20Manager-0F1689?style=flat-square&logo=helm&logoColor=white)
 
-<br/><br/>
+</div>
+
+---
+
+## 📌 Table of Contents
+
+| # | Section |
+|---|---------|
+| 1 | [🧠 Project Overview](#-project-overview) |
+| 2 | [⚠️ Problem Statement](#️-problem-statement) |
+| 3 | [🏗️ On-Premises Architecture](#️-on-premises-architecture) |
+| 4 | [☁️ AWS Cloud Architecture](#️-aws-cloud-architecture) |
+| 5 | [🔄 Complete Pipeline Flow](#-complete-pipeline-flow) |
+| 6 | [🛠️ Full Tech Stack](#️-full-tech-stack) |
+| 7 | [📸 Screenshots](#-screenshots) |
+| 8 | [🧪 Testing & Results](#-testing--results) |
+| 9 | [📊 Performance Comparison](#-performance-comparison) |
+| 10 | [🚀 Future Enhancements](#-future-enhancements) |
+| 11 | [👨‍💻 Author](#-author) |
+
+---
+
+## 🧠 Project Overview
+
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0f0c29,100:302b63&height=3&section=header" width="100%"/>
+</div>
+
+> **AUTOSECOPS** is a Final Year Project that implements a fully automated **DevSecOps** pipeline — integrating security at every stage of the software development lifecycle, from code commit to production deployment.
+
+The project delivers two complete, production-grade deployment environments:
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="45%">
+<h3>🖥️ On-Premises Deployment</h3>
+<img src="https://img.shields.io/badge/Environment-Local%20%2F%20Bare%20Metal-00d4ff?style=for-the-badge" /><br/><br/>
+Local infrastructure managed via <b>Ansible</b>, orchestrated by <b>Kubernetes</b>, secured and monitored end-to-end with a full SIEM + Honeypot stack.
+</td>
+<td align="center" width="10%">⚡</td>
+<td align="center" width="45%">
+<h3>☁️ AWS Cloud Deployment</h3>
+<img src="https://img.shields.io/badge/Environment-AWS%20Cloud-FF9900?style=for-the-badge&logo=amazon-aws" /><br/><br/>
+Cloud-native deployment on <b>AWS EC2</b> with <b>VPC</b>, <b>IAM</b>, <b>CloudTrail</b>, containerized workloads, and full observability.
+</td>
+</tr>
+</table>
+</div>
+
+<br/>
+
+**Core Philosophy:**
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│   SHIFT LEFT SECURITY  ·  AUTOMATE EVERYTHING  ·  FAIL FAST    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+| 🔑 Pillar | Description |
+|-----------|-------------|
+| **Automate** | End-to-end CI/CD with Jenkins, Ansible, Helm, and HPA — zero manual deployments |
+| **Secure** | SAST (SonarQube), container scanning (Trivy), SIEM (Wazuh), Honeypot, and CloudTrail |
+| **Deploy** | Kubernetes-native deployments across both on-prem and AWS with full Helm packaging |
+
+---
+
+## ⚠️ Problem Statement
+
+Modern software teams face a critical challenge: **speed vs. security**. Traditional pipelines treat security as an afterthought — bolted on after development, causing costly delays and vulnerabilities in production.
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="22%">
+🐢<br/><b>Slow Release Cycles</b><br/><sub>Manual stages delay time-to-market</sub>
+</td>
+<td align="center" width="22%">
+🔓<br/><b>Late Security Checks</b><br/><sub>Vulnerabilities found post-deployment</sub>
+</td>
+<td align="center" width="22%">
+📉<br/><b>No Observability</b><br/><sub>Blind spots in runtime security & health</sub>
+</td>
+<td align="center" width="22%">
+⚙️<br/><b>Manual Infrastructure</b><br/><sub>Error-prone, non-repeatable configs</sub>
+</td>
+</tr>
+</table>
+</div>
+
+**AUTOSECOPS solves this** by embedding security tools directly into an automated pipeline — making every commit, build, and deployment secure by default.
+
+---
+
+## 🏗️ On-Premises Architecture
+
+<div align="center">
+
+### 🔵 Local / Bare-Metal DevSecOps Pipeline
+
+<br/>
 
 <table>
 <tr>
-<td align="center">
-<img src="https://img.shields.io/badge/👨‍💻-Ali%20Raza-00D4FF?style=flat-square"/>
-<br/><b>2223095</b>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" width="65"><br/>
+<b>GitHub</b><br/>
+<sub>Source Control</sub>
 </td>
-<td align="center">
-<img src="https://img.shields.io/badge/🎓-NCBA%26E-FF6B35?style=flat-square"/>
-<br/><b>BS Computer Science</b>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" width="65"><br/>
+<b>Jenkins</b><br/>
+<sub>CI/CD Orchestrator</sub>
 </td>
-<td align="center">
-<img src="https://img.shields.io/badge/📅-2022--2026-7B2FBE?style=flat-square"/>
-<br/><b>Fall Session</b>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/6132/6132221.png" width="65"><br/>
+<b>SonarQube</b><br/>
+<sub>SAST Analysis</sub>
 </td>
-<td align="center">
-<img src="https://img.shields.io/badge/⚡-~2%20min%2016%20sec-00E676?style=flat-square"/>
-<br/><b>Pipeline Speed</b>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/919/919853.png" width="65"><br/>
+<b>Docker</b><br/>
+<sub>Containerization</sub>
 </td>
 </tr>
 </table>
 
 <br/>
 
-[![GitHub](https://img.shields.io/badge/GitHub-MuhammadAliRaza--DevSecOps-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MuhammadAliRaza-DevSecOps/shopcart-pro)
-[![Stars](https://img.shields.io/github/stars/MuhammadAliRaza-DevSecOps/shopcart-pro?style=for-the-badge&color=FFD700&logo=star&logoColor=white)](https://github.com/MuhammadAliRaza-DevSecOps/shopcart-pro/stargazers)
-[![Forks](https://img.shields.io/github/forks/MuhammadAliRaza-DevSecOps/shopcart-pro?style=for-the-badge&color=00D4FF&logo=git&logoColor=white)](https://github.com/MuhammadAliRaza-DevSecOps/shopcart-pro/forks)
+<table>
+<tr>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" width="65"><br/>
+<b>Trivy</b><br/>
+<sub>Image Scanning</sub>
+</td>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png" width="65"><br/>
+<b>Docker Hub</b><br/>
+<sub>Registry</sub>
+</td>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" width="65"><br/>
+<b>Ansible</b><br/>
+<sub>Config Management</sub>
+</td>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/5969/5969062.png" width="65"><br/>
+<b>Kubernetes</b><br/>
+<sub>Orchestration</sub>
+</td>
+</tr>
+</table>
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/9850/9850774.png" width="65"><br/>
+<b>Helm</b><br/>
+<sub>Package Manager</sub>
+</td>
+<td align="center" width="40"><b>+</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" width="65"><br/>
+<b>HPA</b><br/>
+<sub>Auto Scaling</sub>
+</td>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920349.png" width="65"><br/>
+<b>Prometheus</b><br/>
+<sub>Metrics Collection</sub>
+</td>
+<td align="center" width="40"><b>+</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" width="65"><br/>
+<b>Grafana</b><br/>
+<sub>Dashboards</sub>
+</td>
+</tr>
+</table>
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="180">
+<img src="https://cdn-icons-png.flaticon.com/512/2716/2716652.png" width="65"><br/>
+<b>Wazuh SIEM</b><br/>
+<sub>Threat Detection & Log Analysis</sub>
+</td>
+<td align="center" width="60"><b>+</b></td>
+<td align="center" width="180">
+<img src="https://cdn-icons-png.flaticon.com/512/2092/2092693.png" width="65"><br/>
+<b>Honeypot</b><br/>
+<sub>Intrusion Deception Layer</sub>
+</td>
+<td align="center" width="60"><b>→</b></td>
+<td align="center" width="180">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" width="65"><br/>
+<b>Email Alerts</b><br/>
+<sub>Real-time Notifications</sub>
+</td>
+</tr>
+</table>
 
 </div>
 
 ---
+
+## ☁️ AWS Cloud Architecture
 
 <div align="center">
 
-## 🗂️ Table of Contents
+### 🟠 AWS Cloud DevSecOps Deployment
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" width="65"><br/>
+<b>GitHub</b><br/>
+<sub>Source Control</sub>
+</td>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" width="65"><br/>
+<b>Jenkins</b><br/>
+<sub>on AWS EC2</sub>
+</td>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/6132/6132221.png" width="65"><br/>
+<b>SonarQube</b><br/>
+<sub>Code Quality</sub>
+</td>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/919/919853.png" width="65"><br/>
+<b>Docker</b><br/>
+<sub>Build & Package</sub>
+</td>
+</tr>
+</table>
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" width="65"><br/>
+<b>Trivy</b><br/>
+<sub>Vulnerability Scan</sub>
+</td>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png" width="65"><br/>
+<b>Docker Hub</b><br/>
+<sub>Image Registry</sub>
+</td>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/5969/5969062.png" width="65"><br/>
+<b>Kubernetes</b><br/>
+<sub>on EC2 Nodes</sub>
+</td>
+<td align="center" width="40"><b>→</b></td>
+<td align="center" width="140">
+<img src="https://cdn-icons-png.flaticon.com/512/9850/9850774.png" width="65"><br/>
+<b>Helm</b><br/>
+<sub>Deployment Charts</sub>
+</td>
+</tr>
+</table>
+
+<br/>
+
+**AWS Infrastructure Layer:**
+
+<table>
+<tr>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/4359/4359965.png" width="65"><br/>
+<b>AWS EC2</b><br/>
+<sub>Compute Instances</sub>
+</td>
+<td align="center" width="40"><b>+</b></td>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" width="65"><br/>
+<b>VPC</b><br/>
+<sub>Network Isolation</sub>
+</td>
+<td align="center" width="40"><b>+</b></td>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/2716/2716652.png" width="65"><br/>
+<b>IAM</b><br/>
+<sub>Identity & Access</sub>
+</td>
+<td align="center" width="40"><b>+</b></td>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920349.png" width="65"><br/>
+<b>CloudTrail</b><br/>
+<sub>Audit Logging</sub>
+</td>
+</tr>
+</table>
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="200">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920349.png" width="65"><br/>
+<b>Prometheus + Grafana</b><br/>
+<sub>Observability Stack</sub>
+</td>
+<td align="center" width="60"><b>+</b></td>
+<td align="center" width="200">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" width="65"><br/>
+<b>Billing Alerts</b><br/>
+<sub>Cost Governance</sub>
+</td>
+<td align="center" width="60"><b>+</b></td>
+<td align="center" width="200">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" width="65"><br/>
+<b>Email Alerts</b><br/>
+<sub>Incident Notifications</sub>
+</td>
+</tr>
+</table>
 
 </div>
-
-| # | Section |
-|---|---------|
-| 1 | [💡 The Story Behind AUTOSECOPS](#-the-story-behind-autosecops) |
-| 2 | [🚨 Problem We Solved](#-problem-we-solved) |
-| 3 | [🏗️ System Architecture](#️-system-architecture) |
-| 4 | [🔄 Complete Pipeline Flow](#-complete-pipeline-flow) |
-| 5 | [🛠️ Full Tech Stack with Icons](#️-full-tech-stack-with-icons) |
-| 6 | [💻 On-Premises — Shopcart Pro](#-on-premises--shopcart-pro) |
-| 7 | [☁️ Cloud Deployment — AWS](#️-cloud-deployment--aws) |
-| 8 | [📸 All Screenshots](#-all-screenshots) |
-| 9 | [🧪 Testing and Results](#-testing-and-results) |
-| 10 | [⚡ Performance Comparison](#-performance-comparison) |
-| 11 | [🚀 Getting Started](#-getting-started) |
-| 12 | [🔮 Future Enhancements](#-future-enhancements) |
-
----
-
-## 💡 The Story Behind AUTOSECOPS
-
-You know that feeling when you deploy code and just **pray** nothing breaks? Or worse — security finds a vulnerability *after* it's already live in production?
-
-That's exactly what **AUTOSECOPS** was built to fix.
-
-The moment a developer types `git push` — an entire automated security machine wakes up. It scans the code, checks quality, builds a Docker image, scans *that* for CVEs, deploys to Kubernetes, and starts monitoring — **all without a single human clicking anything.**
-
-> 💬 *"Security is not a phase you do at the end. It's a habit you build into every single step."*
-
-Built entirely with **free, open-source tools** — proving enterprise-grade DevSecOps doesn't need a million-dollar budget.
-
----
-
-## 🚨 Problem We Solved
-╔══════════════════════════════════╗    ╔══════════════════════════════════╗
-║      ❌ BEFORE AUTOSECOPS        ║    ║      ✅ AFTER AUTOSECOPS         ║
-╠══════════════════════════════════╣    ╠══════════════════════════════════╣
-║ Developer pushes code            ║    ║ Developer pushes code            ║
-║          ↓                       ║    ║          ↓                       ║
-║ (Manual) Someone runs tests      ║    ║ Jenkins triggers AUTOMATICALLY   ║
-║          ↓                       ║    ║          ↓                       ║
-║ (Days later) Security audit      ║    ║ SonarQube scans code INSTANTLY   ║
-║          ↓                       ║    ║          ↓                       ║
-║ (Maybe) Fix vulnerabilities      ║    ║ Docker built + Trivy scans it    ║
-║          ↓                       ║    ║          ↓                       ║
-║ (Manual) Ops team deploys        ║    ║ Helm deploys to Kubernetes       ║
-║          ↓                       ║    ║          ↓                       ║
-║ Hope nothing breaks...           ║    ║ Prometheus + Grafana monitor     ║
-║          ↓                       ║    ║          ↓                       ║
-║ Check logs manually tomorrow     ║    ║ Wazuh alerts on any threat       ║
-║                                  ║    ║          ↓                       ║
-║ ⏰ Hours to days                 ║    ║ 📧 Email Alert instantly         ║
-║ 🔓 Vulns reach production        ║    ║ ⚡ ~2 minutes automated          ║
-║ 😰 Human error everywhere        ║    ║ 🔐 Blocked at every gate         ║
-╚══════════════════════════════════╝    ╚══════════════════════════════════╝
-
----
-
-## 🏗️ System Architecture
-
-### 🖥️ On-Premises Architecture
-╔══════════════════════════════════════════════════════════════════════╗
-║                 🛡️  AUTOSECOPS — ON PREMISES                        ║
-╠══════════════════════════════════════════════════════════════════════╣
-║                                                                      ║
-║   👨‍💻 Developer                                                        ║
-║        │  git push                                                   ║
-║        ▼                                                             ║
-║   ┌─────────────┐   🔔 webhook   ┌──────────────────────────────┐   ║
-║   │  🐙 GitHub  │───────────────▶│      ⚙️  JENKINS             │   ║
-║   │  Repository │               │   CI/CD Pipeline Engine       │   ║
-║   └─────────────┘               └──────────────┬───────────────┘   ║
-║                                                 │                   ║
-║              ┌──────────────────────────────────┤                   ║
-║              │                                  │                   ║
-║              ▼                                  ▼                   ║
-║   ┌──────────────────┐               ┌──────────────────┐          ║
-║   │  🔬 SonarQube    │               │  🐳 Docker Build  │          ║
-║   │  SAST Scanning   │               │  (Multi-stage)    │          ║
-║   │  Quality Gate    │               └────────┬─────────┘          ║
-║   └────────┬─────────┘                        │                    ║
-║            │ ✅ PASS                           ▼                    ║
-║            │                        ┌──────────────────┐           ║
-║            │                        │  🛡️ Trivy Scan   │           ║
-║            │                        │  CVE Detection    │           ║
-║            │                        └────────┬─────────┘           ║
-║            │                                 │ ✅ PASS              ║
-║            └─────────────────────────────────┘                     ║
-║                                              │                     ║
-║                                              ▼                     ║
-║                    ┌─────────────────────────────────────┐         ║
-║                    │      ☸️  KUBERNETES CLUSTER          │         ║
-║                    │  ┌──────┐  ┌──────┐  ┌──────┐       │         ║
-║                    │  │ Pod  │  │ Pod  │  │ Pod  │  📈HPA│         ║
-║                    │  └──────┘  └──────┘  └──────┘       │         ║
-║                    │       ⚓ Helm Charts Deployed         │         ║
-║                    └────────────────┬────────────────────┘         ║
-║                                     │                              ║
-║              ┌──────────────────────┼──────────────┐               ║
-║              ▼                      ▼              ▼               ║
-║   ┌─────────────────┐    ┌──────────────┐  ┌────────────┐         ║
-║   │  📊 Prometheus  │    │ 📉 Grafana   │  │ 🔐 Wazuh  │         ║
-║   │ Metrics Scraper │───▶│  Dashboard   │  │ SIEM/HIDS  │         ║
-║   └─────────────────┘    └──────────────┘  └─────┬──────┘         ║
-║                                                   │                ║
-║                                                   ▼                ║
-║                                        📧 Email Alerts             ║
-║                                        🍯 Honeypot Active          ║
-╚══════════════════════════════════════════════════════════════════════╝
-
-### ☁️ Cloud Architecture — AWS
-╔══════════════════════════════════════════════════════════════════════╗
-║                  ☁️  AUTOSECOPS — AWS CLOUD                         ║
-╠══════════════════════════════════════════════════════════════════════╣
-║                                                                      ║
-║  🐙 GitHub → ⚙️ Jenkins → 🐳 Docker → 📜 Ansible → ☁️ AWS EC2      ║
-║                                                                      ║
-║  ┌────────────────────── 🌐 VPC ──────────────────────────────┐     ║
-║  │                                                            │     ║
-║  │   ┌──────────────────────────────────────────────────┐    │     ║
-║  │   │               💻 EC2 Instance                    │    │     ║
-║  │   │  ┌──────────┐  ┌──────────┐  ┌───────────────┐  │    │     ║
-║  │   │  │⚛️Frontend│  │🟢Backend │  │🍃  MongoDB    │  │    │     ║
-║  │   │  │  :3000   │  │  :5000   │  │   :27017      │  │    │     ║
-║  │   │  └──────────┘  └──────────┘  └───────────────┘  │    │     ║
-║  │   │         🐳 Docker Compose Managed                │    │     ║
-║  │   └──────────────────────────────────────────────────┘    │     ║
-║  │                                                            │     ║
-║  │   🔒 Security Groups: 22 | 3000 | 5000 | 8081             │     ║
-║  └────────────────────────────────────────────────────────────┘     ║
-║                                                                      ║
-║   👤 IAM Least Privilege    📋 CloudTrail Audit    💰 Billing Alert ║
-╚══════════════════════════════════════════════════════════════════════╝
 
 ---
 
 ## 🔄 Complete Pipeline Flow
 
-```mermaid
-flowchart TD
-    A["👨‍💻 Developer\nPushes Code to GitHub"] -->|"🔔 Webhook Trigger"| B
-    B["⚙️ Jenkins\nPipeline Starts"] --> C["📥 Stage 1\nCheckout Code"]
-    C --> D["🔍 Stage 2\nDetect Project Structure"]
-    D --> E["🔬 Stage 3\nSonarQube Check"]
-    E --> F["📊 Stage 4\nSonarQube Scan\n~29 seconds"]
-    F -->|"❌ Quality Gate FAIL"| STOP["🚫 PIPELINE BLOCKED\nDeveloper Notified via Email"]
-    F -->|"✅ Quality Gate PASS"| G
-    G["🔎 Stage 5\nTrivy Source Scan"] --> H["🏗️ Stage 6\nBuild Backend Image\n~3s"]
-    H --> I["🏗️ Stage 7\nBuild Frontend Image\n~4s"]
-    I --> J["🛡️ Stage 8\nTrivy Image Scan\n~3s"]
-    J -->|"❌ CRITICAL CVE Found"| STOP
-    J -->|"✅ No Critical CVEs"| K
-    K["🐳 Stage 9\nSafe Docker Deploy\n~20s"] --> L["⚓ Stage 10\nHelm Chart Validation\n~1s"]
-    L --> M["☸️ Stage 11\nKubernetes + HPA Status"]
-    M --> N["✅ Stage 12\nFinal Status + Post Actions"]
-    N --> O["📊 Prometheus\nScraping Metrics"]
-    N --> P["🔐 Wazuh SIEM\nSecurity Monitoring"]
-    O --> Q["📉 Grafana\nLive Dashboard"]
-    P --> R["📧 Email Alert\nif Threat Detected"]
+<div align="center">
 
-    style A fill:#1A2260,color:#fff,stroke:#00D4FF,stroke-width:2px
-    style B fill:#D24939,color:#fff,stroke:#D24939,stroke-width:2px
-    style F fill:#4E9BCD,color:#fff,stroke:#4E9BCD,stroke-width:2px
-    style STOP fill:#8B0000,color:#fff,stroke:#ff0000,stroke-width:2px
-    style J fill:#1904DA,color:#fff,stroke:#1904DA,stroke-width:2px
-    style M fill:#326CE5,color:#fff,stroke:#326CE5,stroke-width:2px
-    style O fill:#E6522C,color:#fff,stroke:#E6522C,stroke-width:2px
-    style Q fill:#F46800,color:#fff,stroke:#F46800,stroke-width:2px
-    style P fill:#006064,color:#fff,stroke:#006064,stroke-width:2px
-    style N fill:#1B5E20,color:#fff,stroke:#00E676,stroke-width:2px
+```
+ ╔══════════════════════════════════════════════════════════════════╗
+ ║              AUTOSECOPS  —  END-TO-END PIPELINE                 ║
+ ╠══════════════════════════════════════════════════════════════════╣
+ ║                                                                  ║
+ ║  [1] Developer pushes code  →  GitHub repository triggers hook  ║
+ ║                                          │                       ║
+ ║                                          ▼                       ║
+ ║  [2] Jenkins picks up job  →  Checkout + Dependency Install      ║
+ ║                                          │                       ║
+ ║                                          ▼                       ║
+ ║  [3] SonarQube SAST  →  Static code analysis + quality gates    ║
+ ║                                          │                       ║
+ ║                          ┌───────────────┴──────────────┐       ║
+ ║                       PASS ✅                        FAIL ❌     ║
+ ║                          │                            Email      ║
+ ║                          ▼                                       ║
+ ║  [4] Docker Build  →  Containerize application image            ║
+ ║                                          │                       ║
+ ║                                          ▼                       ║
+ ║  [5] Trivy Scan  →  CVE scanning of image layers                ║
+ ║                                          │                       ║
+ ║                          ┌───────────────┴──────────────┐       ║
+ ║                       CLEAN ✅                     CRITICAL ❌   ║
+ ║                          │                            Email      ║
+ ║                          ▼                                       ║
+ ║  [6] Docker Hub  →  Push verified image to registry             ║
+ ║                                          │                       ║
+ ║                          ┌───────────────┴──────────────┐       ║
+ ║               On-Premises 🖥️                        AWS ☁️       ║
+ ║                          │                              │        ║
+ ║                          ▼                              ▼        ║
+ ║  [7a] Ansible  →  Config      [7b] EC2 + VPC + IAM provisioned  ║
+ ║        Kubernetes cluster              │                         ║
+ ║                          │            ▼                          ║
+ ║                          └──→  Helm Deploy to Kubernetes         ║
+ ║                                        │                         ║
+ ║                                        ▼                         ║
+ ║  [8] HPA  →  Auto-scales pods based on CPU/memory load          ║
+ ║                                        │                         ║
+ ║                                        ▼                         ║
+ ║  [9] Prometheus + Grafana  →  Live metrics + dashboards         ║
+ ║                                        │                         ║
+ ║                                        ▼                         ║
+ ║  [10] Wazuh SIEM  →  Runtime threat detection + log correlation  ║
+ ║  [10] Honeypot    →  Decoy layer for attacker fingerprinting     ║
+ ║                                        │                         ║
+ ║                                        ▼                         ║
+ ║  [11] Email Alerts  →  Notify on anomalies, failures, breaches  ║
+ ║                                                                  ║
+ ╚══════════════════════════════════════════════════════════════════╝
 ```
 
-### ☁️ Cloud Pipeline
-
-```mermaid
-flowchart LR
-    A["🐙 GitHub"] -->|"webhook"| B["⚙️ Jenkins"]
-    B -->|"build"| C["🐳 Docker\nBuild"]
-    C -->|"push"| D["📦 Docker Hub\nRegistry"]
-    D -->|"deploy"| E["📜 Ansible\nPlaybook"]
-    E -->|"provision"| F["☁️ AWS EC2"]
-    F --> G["👤 IAM\nRoles"]
-    F --> H["📋 CloudTrail\nAudit"]
-    F --> I["💰 Billing\nMonitor"]
-
-    style A fill:#181717,color:#fff
-    style B fill:#D24939,color:#fff
-    style C fill:#2496ED,color:#fff
-    style E fill:#EE0000,color:#fff
-    style F fill:#FF9900,color:#fff
-```
+</div>
 
 ---
 
-## 🛠️ Full Tech Stack with Icons
-
-### 🖥️ On-Premises Pipeline
-
-| Icon | Tool | Role | Why Chosen |
-|------|------|------|------------|
-| <img src="https://cdn.simpleicons.org/github/white" width="20"/> | **GitHub** | Source Control | Webhook-based auto pipeline trigger |
-| <img src="https://cdn.simpleicons.org/jenkins/D24939" width="20"/> | **Jenkins** | CI/CD Engine | Self-hosted, 1800+ plugins, on-prem perfect |
-| <img src="https://cdn.simpleicons.org/sonarqube/4E9BCD" width="20"/> | **SonarQube** | SAST Scanner | Catches bugs and vulns before Docker build |
-| <img src="https://cdn.simpleicons.org/docker/2496ED" width="20"/> | **Docker** | Containerization | Consistent environments, multi-stage builds |
-| <img src="https://cdn.simpleicons.org/aqua/1904DA" width="20"/> | **Trivy** | CVE Scanner | Scans OS packages + dependencies in images |
-| <img src="https://cdn.simpleicons.org/kubernetes/326CE5" width="20"/> | **Kubernetes** | Orchestration | Self-healing, auto-scaling, production-grade |
-| <img src="https://cdn.simpleicons.org/helm/0F1689" width="20"/> | **Helm** | Package Manager | Templated K8s deployments, version history |
-| ⚖️ | **HPA** | Auto Scaling | CPU-based pod scaling — min 2, max 10 |
-| <img src="https://cdn.simpleicons.org/prometheus/E6522C" width="20"/> | **Prometheus** | Metrics | Scrapes all pod metrics every 15 seconds |
-| <img src="https://cdn.simpleicons.org/grafana/F46800" width="20"/> | **Grafana** | Dashboards | Real-time visual monitoring |
-| 🔐 | **Wazuh** | SIEM + HIDS | File integrity + log correlation + intrusion |
-| 📧 | **Email SMTP** | Alerts | Instant notification on security events |
-| 🍯 | **Honeypot** | Deception | Detect and log malicious requests |
-
-### ☁️ Cloud Tools
-
-| Icon | Tool | Purpose |
-|------|------|---------|
-| <img src="https://cdn.simpleicons.org/amazonaws/FF9900" width="20"/> | **AWS EC2** | Virtual server for production deployment |
-| 🌐 | **AWS VPC** | Isolated network with subnets and routing |
-| <img src="https://cdn.simpleicons.org/ansible/EE0000" width="20"/> | **Ansible** | Agentless EC2 provisioning and deployment |
-| 👤 | **IAM** | Least privilege roles — no root account |
-| 📋 | **CloudTrail** | Every API call logged for compliance |
-| 💰 | **AWS Billing Alerts** | Budget threshold notifications |
-
----
-
-## 💻 On-Premises — Shopcart Pro
-
-Shopcart Pro is a full-stack e-commerce web application — the **real-world target** of our DevSecOps pipeline:
-╔═══════════════════════════════════════════╗
-║           🛒  SHOPCART PRO                ║
-╠═══════════════════════════════════════════╣
-║  ⚛️  Frontend   │  React.js  │  Port 3000 ║
-║  🟢  Backend    │  Node.js   │  Port 5000 ║
-║  🍃  Database   │  MongoDB   │  Port 27017║
-║  🔧  Admin DB   │  Mongo Exp │  Port 8081 ║
-╠═══════════════════════════════════════════╣
-║   Each service = its own Docker container ║
-╚═══════════════════════════════════════════╝
-
-> Every time code changes in the GitHub repo → entire pipeline runs → secure deployment happens. **Nobody clicks anything.** That's the whole point.
-
----
-
-## ☁️ Cloud Deployment — AWS
-
-The **same Shopcart application**, taken to the cloud using AWS EC2, Docker Compose, and Ansible — proving the pipeline is **environment-agnostic**.
-
-**Key cloud security features implemented:**
-🔒 SSH key-pair auth       — no password login ever
-🛡️ Security Groups         — only required ports open
-👤 IAM least privilege     — no root account in production
-📋 CloudTrail logging      — full API audit trail
-💰 Budget alerts           — billing governance active
-
----
-
-## 📸 All Screenshots
-
----
-
-### 🖥️ On-Premises Screenshots
-
----
-
-#### 📌 Figure 4.1 — Shopcart Source Code on GitHub
-> Every commit automatically fires the Jenkins pipeline via webhook — zero manual trigger
-
-![GitHub Source Code](./screenshots/github-source.png)
-
----
-
-#### 📌 Figure 4.1.2 — ShopcartPro Running Live in Browser
-> Application live and accessible — the final goal of every single pipeline run
-
-![Shopcart Live](./screenshots/shopcart-live.png)
-
----
-
-#### 📌 Figure 4.2.1 — Jenkins Pipeline — ALL 12 Stages Green ✅
-> Average run time ~2 minutes 16 seconds — fully automated, zero manual steps
-
-![Jenkins Pipeline](./screenshots/jenkins-pipeline.png)
-
----
-
-#### 📌 Figure 4.2.2 — Jenkins + Related Containers in Docker
-> Jenkins runs in Docker alongside all its service containers
-
-![Jenkins Docker](./screenshots/jenkins-docker.png)
-
----
-
-#### 📌 Figure 4.3.1 — SonarQube Code Quality and Security Scan
-> Bugs: 0 ✅ | Vulnerabilities: 0 ✅ | Code Smells: 103 — A Grade on security metrics
-
-![SonarQube](./screenshots/sonarqube-scan.png)
-
----
-
-#### 📌 Figure 4.3.2 — Trivy Docker Image Vulnerability Scan
-> Trivy listing all CVEs found in the image — pipeline automatically blocks on HIGH/CRITICAL
-
-![Trivy Scan](./screenshots/trivy-scan.png)
-
----
-
-#### 📌 Figure 4.4.1 — Shopcart Containers Running with Port Mappings
-> All four containers active with correct port mappings confirmed
-
-![Docker Containers](./screenshots/docker-containers.png)
-
----
-
-#### 📌 Figure 4.4.2 — Docker Desktop View of All Active Containers
-> All Shopcart containers visible and healthy in Docker Desktop
-
-![Docker Desktop](./screenshots/docker-desktop.png)
-
----
-
-#### 📌 Figure 4.5.1 — Kubernetes Pods Running in Namespace
-> Pods deployed and running in production namespace — scheduled by Kubernetes
-
-![K8s Pods](./screenshots/k8s-pods.png)
-
----
-
-#### 📌 Figure 4.5.2 — Helm Release Confirming Successful Deployment
-> Helm showing successful release with full version history for easy rollback
-
-![Helm Release](./screenshots/helm-release.png)
-
----
-
-#### 📌 Figure 4.6 — HPA Actively Scaling Pods Based on CPU Load
-> HPA scaling pods from minimum 2 up to 7 during stress test — zero manual intervention
-
-![HPA](./screenshots/hpa-scaling.png)
-
----
-
-#### 📌 Figure 4.7.1 — Grafana Live Monitoring Dashboard
-> Real-time CPU, memory, request rate, pod health — all visible at a single glance
-
-![Grafana](./screenshots/grafana-dashboard.png)
-
----
-
-#### 📌 Figure 4.7.2 — Prometheus Scraping Backend Endpoint
-> Prometheus scraping Shopcart backend /metrics endpoint every 15 seconds
-
-![Prometheus](./screenshots/prometheus.png)
-
----
-
-#### 📌 Figure 4.8 — Wazuh SIEM Showing Active Agents and Alerts
-> Wazuh showing active monitoring agents and live security event alerts
-
-![Wazuh](./screenshots/wazuh-agents.png)
-
----
-
-#### 📌 Figure 4.9 — Honeypot Catching Suspicious Requests
-> Custom honeypot endpoint logging malicious actors probing the system
-
-![Honeypot](./screenshots/honeypot.png)
-
----
-
-#### 📌 Figure 4.10 — Security Alert Email Received
-> Real email received after honeypot was triggered — end-to-end alerting proven
-
-![Email Alert](./screenshots/email-alert.png)
-
----
-
-### ☁️ Cloud / AWS Screenshots
-
----
-
-#### 📌 Figure 4.11 — EC2 Instance with Keypair and Security Groups
-> EC2 with SSH keypair authentication and Security Groups on required ports only
-
-![EC2](./screenshots/ec2-instance.png)
-
----
-
-#### 📌 Figure 4.12 — SSH Login via Private Key via Git Bash
-> Secure SSH connection using private key — password authentication completely disabled
-
-![SSH](./screenshots/ssh-login.png)
-
----
-
-#### 📌 Figure 4.13 — Shopcart Containers on EC2 via Docker Compose
-> Same containerized app running in AWS cloud — environment portability proven
-
-![EC2 Docker](./screenshots/ec2-docker.png)
-
----
-
-#### 📌 Figure 4.14 — Ansible Ping Confirming EC2 Host Reachable
-> Ansible confirming successful connectivity to EC2 before running deployment playbooks
-
-![Ansible](./screenshots/ansible-ping.png)
-
----
-
-#### 📌 Figure 4.15 — Cloud Jenkins Pipeline All Stages Complete
-> GitHub to Docker to Ansible to EC2 — every stage green
-
-![Cloud Jenkins](./screenshots/cloud-jenkins.png)
-
----
-
-#### 📌 Figure 4.16 — AWS VPC Setup with Subnets and Route Table
-> VPC with subnets, route tables, and internet gateway properly configured
-
-![VPC](./screenshots/aws-vpc.png)
-
----
-
-#### 📌 Figure 4.17 — CloudTrail Logging API Events on EC2
-> Every API call logged with timestamp, user identity, and IP — full audit trail
-
-![CloudTrail](./screenshots/cloudtrail.png)
-
----
-
-#### 📌 Figure 4.18 — AWS Billing Summary
-> Monthly cloud cost visible — budget alerts configured to prevent surprises
-
-![Billing](./screenshots/aws-billing.png)
-
----
-
-#### 📌 Figure 4.19 — IAM User Group with Restricted Permissions
-> Least privilege IAM setup — specific permissions only, no root account in production
-
-![IAM](./screenshots/iam-setup.png)
-
----
-
-#### 📌 Figure 4.20 — Shopcart Live on EC2 Public IP
-> Shopcart loading in browser via EC2 public IP — cloud deployment fully verified
-
-![EC2 Live](./screenshots/ec2-live.png)
-
----
-
-## 🧪 Testing and Results
-
-### ✅ Functional Testing — All 10 Passed
-
-| ID | 🔧 Module | What We Tested | Expected | Actual | Status |
-|----|-----------|----------------|----------|--------|--------|
-| TC-01 | ⚙️ CI/CD | Git commit triggers Jenkins | Auto trigger | Triggered | ✅ **PASS** |
-| TC-02 | ⚙️ Jenkins | All 12 stages complete | All green | All passed | ✅ **PASS** |
-| TC-03 | 🔬 SonarQube | Code quality + security scan | Issues reported | Reported | ✅ **PASS** |
-| TC-04 | 🛡️ Trivy | Docker image CVE scan | Vulns listed | Detected | ✅ **PASS** |
-| TC-05 | 🐳 Docker | Backend + frontend image build | Images created | Created | ✅ **PASS** |
-| TC-06 | ☸️ Kubernetes | Pods deployed and managed | Pods running | Running | ✅ **PASS** |
-| TC-07 | 📈 HPA | Auto-scaling under CPU load | Pods scaled | Scaled 2→7 | ✅ **PASS** |
-| TC-08 | 🌐 Application | App accessible via browser | App loads | Accessible | ✅ **PASS** |
-| TC-09 | 🔐 Wazuh SIEM | Failed login detection | Alert generated | Alerted | ✅ **PASS** |
-| TC-10 | 📧 Email Alerts | Security email notification | Email received | Received | ✅ **PASS** |
-
-### 🔐 Security Testing — All Passed
-
-| ID | Module | Attack Simulated | Result | Status |
-|----|--------|-----------------|--------|--------|
-| ST-01 | 🔑 Login System | Brute force repeated wrong passwords | Account locked | ✅ **PASS** |
-| ST-02 | 🔐 Wazuh SIEM | Suspicious activity simulation | Alerts generated | ✅ **PASS** |
-| ST-03 | 🛡️ Trivy | Known vulnerable packages scan | CVEs detected | ✅ **PASS** |
-| ST-04 | 🔬 SonarQube | Insecure code patterns scan | Issues flagged | ✅ **PASS** |
-
-### 📊 Overall Summary
-
-| Test Type | Result |
-|-----------|--------|
-| ✅ Functional Testing | **Successful** |
-| ✅ Integration Testing | **Successful** |
-| ✅ Security Testing | **Effective** |
-| ✅ Performance Testing | **Stable** |
-
----
-
-## ⚡ Performance Comparison
-
-| Feature | ❌ Traditional Manual | ✅ AUTOSECOPS |
-|---------|----------------------|--------------|
-| 🚀 Deployment Speed | Hours of manual steps | **~2 min 16 sec automated** |
-| 🔐 Security Checks | Done after deployment | **At every pipeline stage** |
-| 📊 Monitoring | Check logs manually | **Real-time Grafana dashboards** |
-| 📈 Scalability | Manual — add servers | **Auto — K8s HPA scales pods** |
-| 🔔 Alerts | Someone notices issue | **Instant email on anomaly** |
-| 📋 Audit Trail | Nothing logged | **CloudTrail + Wazuh + Jenkins** |
-| 🔄 Rollback | Manual, risky | **helm rollback — one command** |
-| 👤 Human Effort | High — every single step | **Minimal — only exceptions** |
-| 💰 Tool Cost | Expensive licensed tools | **$0 — 100% open source** |
-| 🔁 Consistency | Different every time | **Identical every single run** |
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-```bash
-git --version          # Git
-docker --version       # Docker Desktop
-kubectl version        # Kubernetes CLI
-helm version           # Helm 3.x
-java -version          # Java 11+
-ansible --version      # Ansible
-```
-
-### 1️⃣ Clone This Repo
-
-```bash
-git clone https://github.com/MuhammadAliRaza-DevSecOps/shopcart-pro.git
-cd shopcart-pro
-```
-
-### 2️⃣ Start Jenkins
-
-```bash
-docker run -d \
-  --name jenkins \
-  -p 8080:8080 \
-  -p 50000:50000 \
-  -v jenkins_home:/var/jenkins_home \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  jenkins/jenkins:lts
-
-# Get password:
-docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
-# Open: http://localhost:8080
-```
-
-### 3️⃣ Start SonarQube
-
-```bash
-docker run -d \
-  --name sonarqube \
-  -p 9000:9000 \
-  sonarqube:community
-# Open: http://localhost:9000  (admin / admin)
-```
-
-### 4️⃣ Deploy to Kubernetes
-
-```bash
-helm install shopcart-pro ./kubernetes/helm-charts/ \
-  --namespace production \
-  --create-namespace
-
-kubectl get pods -n production
-kubectl get hpa  -n production
-```
-
-### 5️⃣ Open the App
-
-```bash
-kubectl port-forward svc/shopcart-frontend 3000:3000 -n production
-# Open: http://localhost:3000
-```
-
-### 6️⃣ Monitoring
-📊 Prometheus → http://localhost:9090
-📉 Grafana    → http://localhost:3001  (admin / prom-operator)
-
----
-
-## 🔮 Future Enhancements
-
-| Priority | 🔧 Enhancement | What It Adds |
-|----------|----------------|--------------|
-| 🔴 High | **pfSense Firewall** | Next-gen network perimeter security |
-| 🔴 High | **Nessus / OpenVAS** | Network-wide CVE scanning and compliance |
-| 🔴 High | **AI/ML Anomaly Detection** | ML-based intelligent threat recognition |
-| 🟡 Medium | **Ollama Local LLM** | Self-hosted AI for log analysis |
-| 🟡 Medium | **Microsoft Active Directory** | Centralized identity management and SSO |
-| 🟡 Medium | **Blockchain Audit Logging** | Immutable tamper-proof audit trail |
-| 🟡 Medium | **Multi-Cloud Azure + GCP** | Terraform IaC cloud-agnostic setup |
-| 🟢 Low | **Jira Integration** | Auto ticket on pipeline failures |
-| 🟢 Low | **SOAR Integration** | Security Orchestration and Response |
-| 🟢 Low | **DAST with OWASP ZAP** | Dynamic application security testing |
-
----
+## 🛠️ Full Tech Stack
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00D4FF,30:0D1540,60:1A2260,100:0A0E2A&height=160&section=footer&animation=fadeIn" width="100%"/>
+### ⚙️ DevOps & CI/CD
+
+<table>
+<tr>
+<td align="center" width="130">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" width="55"><br/>
+<b>GitHub</b><br/>
+<sub>Version Control & Webhooks</sub>
+</td>
+<td align="center" width="130">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968853.png" width="55"><br/>
+<b>Jenkins</b><br/>
+<sub>Pipeline Automation</sub>
+</td>
+<td align="center" width="130">
+<img src="https://cdn-icons-png.flaticon.com/512/919/919853.png" width="55"><br/>
+<b>Docker</b><br/>
+<sub>Containerization</sub>
+</td>
+<td align="center" width="130">
+<img src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png" width="55"><br/>
+<b>Docker Hub</b><br/>
+<sub>Image Registry</sub>
+</td>
+<td align="center" width="130">
+<img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" width="55"><br/>
+<b>Ansible</b><br/>
+<sub>Infrastructure as Code</sub>
+</td>
+</tr>
+</table>
+
+### 🐳 Container Orchestration
+
+<table>
+<tr>
+<td align="center" width="200">
+<img src="https://cdn-icons-png.flaticon.com/512/5969/5969062.png" width="55"><br/>
+<b>Kubernetes</b><br/>
+<sub>Container Orchestration</sub>
+</td>
+<td align="center" width="200">
+<img src="https://cdn-icons-png.flaticon.com/512/9850/9850774.png" width="55"><br/>
+<b>Helm</b><br/>
+<sub>Kubernetes Package Manager</sub>
+</td>
+<td align="center" width="200">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" width="55"><br/>
+<b>HPA</b><br/>
+<sub>Horizontal Pod Autoscaler</sub>
+</td>
+</tr>
+</table>
+
+### 🔐 Security Tools
+
+<table>
+<tr>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/6132/6132221.png" width="55"><br/>
+<b>SonarQube</b><br/>
+<sub>SAST / Code Quality</sub>
+</td>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" width="55"><br/>
+<b>Trivy</b><br/>
+<sub>Container Vulnerability Scanner</sub>
+</td>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/2716/2716652.png" width="55"><br/>
+<b>Wazuh SIEM</b><br/>
+<sub>Threat Detection & SIEM</sub>
+</td>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/2092/2092693.png" width="55"><br/>
+<b>Honeypot</b><br/>
+<sub>Intrusion Deception</sub>
+</td>
+</tr>
+</table>
+
+### 📊 Monitoring & Observability
+
+<table>
+<tr>
+<td align="center" width="220">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920349.png" width="55"><br/>
+<b>Prometheus</b><br/>
+<sub>Metrics Collection & Alerting</sub>
+</td>
+<td align="center" width="220">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" width="55"><br/>
+<b>Grafana</b><br/>
+<sub>Dashboards & Visualization</sub>
+</td>
+<td align="center" width="220">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" width="55"><br/>
+<b>Email Alerts</b><br/>
+<sub>Real-time Notifications</sub>
+</td>
+</tr>
+</table>
+
+### ☁️ AWS Services
+
+<table>
+<tr>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/4359/4359965.png" width="55"><br/>
+<b>EC2</b><br/>
+<sub>Compute Instances</sub>
+</td>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png" width="55"><br/>
+<b>VPC</b><br/>
+<sub>Virtual Private Cloud</sub>
+</td>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/2716/2716652.png" width="55"><br/>
+<b>IAM</b><br/>
+<sub>Identity & Access Mgmt</sub>
+</td>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/2920/2920349.png" width="55"><br/>
+<b>CloudTrail</b><br/>
+<sub>Audit & Governance</sub>
+</td>
+<td align="center" width="160">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" width="55"><br/>
+<b>Billing Alerts</b><br/>
+<sub>Cost Governance</sub>
+</td>
+</tr>
+</table>
+
+</div>
+
+---
+
+## 📸 Screenshots
+
+> 📌 Replace the placeholder URLs below with actual screenshot links after uploading to Imgur, GitHub Issues, or any CDN.
 
 <br/>
 
-### 👨‍💻 Built by
+### 🔷 Jenkins Pipeline Dashboard
 
-**Muhammad Ali Raza** | Roll No: 2223095 | NCBA&E 2026
-
-[![GitHub](https://img.shields.io/badge/GitHub-MuhammadAliRaza--DevSecOps-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MuhammadAliRaza-DevSecOps/shopcart-pro)
-
-<br/>
-
-**⭐ If this project helped you — drop a star, it means everything! ⭐**
+<div align="center">
+<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Jenkins Pipeline — Stages View"/>
+<sub><i>Figure 1: Jenkins multistage pipeline showing all build, test, scan, and deploy stages</i></sub>
+</div>
 
 <br/>
 
-*Built with ❤️, endless debug sessions, and a lot of chai ☕*
+### 🔷 SonarQube Analysis Report
+
+<div align="center">
+<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="SonarQube SAST Analysis Dashboard"/>
+<sub><i>Figure 2: SonarQube code quality gate results — bugs, vulnerabilities, code smells</i></sub>
+</div>
 
 <br/>
 
-**بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ**
+### 🔷 Trivy Container Scan Results
+
+<div align="center">
+<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Trivy Image Vulnerability Report"/>
+<sub><i>Figure 3: Trivy CVE scan output — severity breakdown for Docker image layers</i></sub>
+</div>
+
+<br/>
+
+### 🔷 Kubernetes Cluster — Running Pods
+
+<div align="center">
+<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Kubernetes Pods and Services"/>
+<sub><i>Figure 4: kubectl output showing all pods, services, and deployments across namespaces</i></sub>
+</div>
+
+<br/>
+
+### 🔷 Grafana Monitoring Dashboard
+
+<div align="center">
+<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Grafana Live Monitoring Dashboard"/>
+<sub><i>Figure 5: Grafana dashboard — CPU, memory, pod health, and request rate metrics</i></sub>
+</div>
+
+<br/>
+
+### 🔷 Wazuh SIEM — Threat Detection
+
+<div align="center">
+<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Wazuh SIEM Alerts and Events"/>
+<sub><i>Figure 6: Wazuh SIEM event correlation — real-time alerts and intrusion detection logs</i></sub>
+</div>
+
+<br/>
+
+### 🔷 Honeypot Activity Log
+
+<div align="center">
+<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="Honeypot Attack Logs"/>
+<sub><i>Figure 7: Honeypot captured attacker fingerprints and unauthorized access attempts</i></sub>
+</div>
+
+<br/>
+
+### 🔷 AWS Console — EC2 & VPC Setup
+
+<div align="center">
+<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="AWS EC2 and VPC Configuration"/>
+<sub><i>Figure 8: AWS console showing provisioned EC2 instances, VPC subnets, and security groups</i></sub>
+</div>
+
+<br/>
+
+### 🔷 HPA Auto-Scaling in Action
+
+<div align="center">
+<img src="PASTE_SCREENSHOT_URL_HERE" width="100%" alt="HPA Horizontal Pod Autoscaler Scaling Event"/>
+<sub><i>Figure 9: HPA scaling event — pods scaled from 2 to 8 under load testing conditions</i></sub>
+</div>
+
+---
+
+## 🧪 Testing & Results
+
+### ✅ Pipeline Validation
+
+| Test Case | Tool | Expected | Result |
+|-----------|------|----------|--------|
+| Code pushed with bug | SonarQube | Quality gate FAIL → pipeline halted | ✅ Passed |
+| Clean code push | SonarQube | Quality gate PASS → pipeline continues | ✅ Passed |
+| Image with HIGH CVE | Trivy | Scan FAIL → pipeline halted + alert | ✅ Passed |
+| Clean Docker image | Trivy | Scan PASS → image pushed to registry | ✅ Passed |
+| Config deployment | Ansible | Idempotent playbook execution | ✅ Passed |
+| App deployment | Helm + K8s | Pods running, service exposed | ✅ Passed |
+| Pod load spike | HPA | Auto-scale up triggered | ✅ Passed |
+| Intrusion attempt | Honeypot + Wazuh | Alert triggered + logged | ✅ Passed |
+
+<br/>
+
+### 🔐 Security Testing
+
+| Security Layer | Test Performed | Outcome |
+|----------------|---------------|---------|
+| **SonarQube** | Injected SQL injection + XSS in code | Detected and blocked ✅ |
+| **Trivy** | Used image with known CVE-2023 vulns | Flagged CRITICAL, pipeline halted ✅ |
+| **Wazuh SIEM** | Simulated brute force SSH attempt | Alert generated in < 30s ✅ |
+| **Honeypot** | Port-scanned honeypot endpoint | Attacker IP logged and flagged ✅ |
+| **IAM (AWS)** | Tested least-privilege access | Unauthorized actions blocked ✅ |
+| **CloudTrail** | Performed API calls on AWS resources | All calls logged and auditable ✅ |
+
+<br/>
+
+### 📈 Load & Scaling Tests
+
+| Scenario | Initial Pods | Peak Load | Pods After HPA | Response Time |
+|----------|-------------|-----------|----------------|---------------|
+| Normal traffic | 2 | 20% CPU | 2 | ~120ms |
+| Moderate load | 2 | 60% CPU | 4 | ~145ms |
+| Heavy load | 2 | 85% CPU | 8 | ~180ms |
+| Stress test | 2 | 100% CPU | 10 (max) | ~220ms |
+
+---
+
+## 📊 Performance Comparison
+
+<div align="center">
+
+### 🖥️ On-Premises vs ☁️ AWS Cloud
+
+| Metric | On-Premises | AWS Cloud |
+|--------|------------|-----------|
+| **Pipeline Execution Time** | ~6 min | ~5 min |
+| **Deployment Time** | ~3 min | ~2.5 min |
+| **Scaling Speed (HPA)** | ~45 sec | ~35 sec |
+| **Setup Complexity** | High (manual infra) | Medium (managed services) |
+| **Cost** | CapEx (fixed hardware) | OpEx (pay-as-you-go) |
+| **Availability** | Single datacenter | Multi-AZ capable |
+| **Security Visibility** | Wazuh + Honeypot | Wazuh + CloudTrail + IAM |
+| **Observability** | Prometheus + Grafana | Prometheus + Grafana |
+| **Scalability** | Limited by hardware | Virtually unlimited |
+| **Best For** | Air-gapped / on-site envs | Enterprise cloud workloads |
+
+</div>
+
+<br/>
+
+> 💡 **Key Takeaway:** Both deployments achieved full pipeline automation and security integration. AWS Cloud offered faster scaling and higher availability, while On-Premises provided full control and data sovereignty — both are production-viable depending on organizational requirements.
+
+---
+
+## 🚀 Future Enhancements
+
+<div align="center">
+<table>
+<tr>
+<td align="center" width="200">
+🤖<br/><b>AI-Powered SIEM</b><br/><sub>ML-based anomaly detection in Wazuh for smarter threat classification</sub>
+</td>
+<td align="center" width="200">
+🔗<br/><b>GitOps with ArgoCD</b><br/><sub>Declarative continuous delivery using ArgoCD for Kubernetes</sub>
+</td>
+<td align="center" width="200">
+🛡️<br/><b>OPA Policy Engine</b><br/><sub>Open Policy Agent for fine-grained K8s admission control</sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="200">
+📦<br/><b>Artifact Management</b><br/><sub>Nexus or JFrog Artifactory for storing build artifacts securely</sub>
+</td>
+<td align="center" width="200">
+🌐<br/><b>Multi-Cloud Support</b><br/><sub>Extend to GCP or Azure for hybrid cloud resilience</sub>
+</td>
+<td align="center" width="200">
+📋<br/><b>Compliance Dashboards</b><br/><sub>SOC2 / ISO 27001 automated compliance reporting via Wazuh</sub>
+</td>
+</tr>
+</table>
+</div>
+
+---
+
+## 👨‍💻 Author
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=120&section=footer&text=Built%20with%20%E2%9D%A4%EF%B8%8F%20by%20Muhammad%20Ali%20Raza&fontSize=22&fontColor=a78bfa&fontAlignY=55" width="100%"/>
+
+<br/>
+
+### Muhammad Ali Raza
+
+![Student](https://img.shields.io/badge/Final%20Year%20Student-NCBA%26E-00d4ff?style=for-the-badge)
+![DevSecOps](https://img.shields.io/badge/Specialization-DevSecOps-a78bfa?style=for-the-badge)
+
+> *"Security is not a product, but a process — automate it."*
+
+<br/>
+
+**🎓 Institution:** National College of Business Administration & Economics (NCBA&E)
+
+**📁 Project:** AUTOSECOPS — Final Year Project (FYP)
+
+**📧 Contact:** [your-email@domain.com](mailto:your-email@domain.com)
+
+**🔗 LinkedIn:** [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
+
+**🐙 GitHub:** [github.com/your-username](https://github.com/your-username)
+
+<br/>
+
+---
+
+<sub>© 2025 Muhammad Ali Raza · NCBA&E · All Rights Reserved</sub>
+
+<br/>
+
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=your-username.autosecops&color=00d4ff)
+![Stars](https://img.shields.io/github/stars/your-username/autosecops?style=social)
+![Forks](https://img.shields.io/github/forks/your-username/autosecops?style=social)
 
 </div>
