@@ -1,0 +1,146 @@
+require("dotenv").config();
+
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+const mongoose = require("mongoose");
+
+const productRoutes = require("./routes/productRoutes");
+const authRoutes = require("./routes/authRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+const client = require("prom-client");
+const app = express();
+const { sendSecurityAlert } = require("./utils/emailAlert");
+const { writeSecurityLog } = require("./utils/securityLogger");
+app.use(cors({ origin: "*" }));
+app.use(express.json());
+app.use(morgan("dev"));
+app.use("/api/orders", orderRoutes);
+
+
+
+const register = new client.Registry();
+client.collectDefaultMetrics({ register });
+
+const httpRequestDuration = new client.Histogram({
+  name: "http_request_duration_seconds",
+  help: "Duration of HTTP requests in seconds",
+  labelNames: ["method", "route", "code"],
+  buckets: [0.1, 0.3, 0.5, 1, 2, 5]
+});
+
+
+
+register.registerMetric(httpRequestDuration);
+
+app.use((req, res, next) => {
+  const end = httpRequestDuration.startTimer();
+  res.on("finish", () => {
+    end({
+      method: req.method,
+      route: req.route?.path || req.path,
+      code: res.statusCode
+    });
+  });
+  next();
+});
+
+async function connectDB() {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("✅ MongoDB connected");
+  } catch (error) {
+    console.error("❌ MongoDB connection failed:", error.message);
+    process.exit(1);
+  }
+}
+
+app.get("/", (req, res) => {
+  res.send("ShopCart Pro backend is running 🚀");
+});
+
+app.get("/api/health", (req, res) => {
+  res.json({
+    ok: true,
+    service: "backend",
+    time: new Date().toISOString()
+  });
+});
+
+app.use("/api/products", productRoutes);
+app.use("/api/auth", authRoutes);
+
+const PORT = process.env.PORT || 5000;
+
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`✅ Backend running on port ${PORT}`);
+  });
+});
+
+
+
+
+
+app.get("/metrics", async (req, res) => {
+  res.set("Content-Type", register.contentType);
+  res.end(await register.metrics());
+});
+
+
+
+app.get("/api/test-email-alert", async (req, res) => {
+  const result = await sendSecurityAlert(
+    "Shopcart Security Test Alert",
+    "This is a test email from the Shopcart backend security alert system."
+  );
+
+  res.json({
+    ok: true,
+    result,
+  });
+});
+
+
+
+app.get("/api/trap/admin", async (req, res) => {
+  writeSecurityLog("HONEYPOT_ADMIN_TRAP", "Honeypot admin trap route accessed", {
+    ip: req.ip,
+    userAgent: req.headers["user-agent"] || "unknown",
+    path: req.originalUrl
+  });
+
+  await sendSecurityAlert(
+    "Shopcart Security Alert: Honeypot Trap Triggered",
+    `Honeypot admin trap route was accessed.\n\nIP: ${req.ip}\nUser-Agent: ${req.headers["user-agent"] || "unknown"}\nPath: ${req.originalUrl}`
+  );
+
+  return res.status(403).json({
+    message: "Access denied"
+  });
+});
+
+
+
+
+const trapHandler = async (req, res) => {
+  writeSecurityLog("HONEYPOT_TRIGGERED", "Fake sensitive route accessed", {
+    ip: req.ip,
+    path: req.originalUrl,
+    userAgent: req.headers["user-agent"] || "unknown"
+  });
+
+  await sendSecurityAlert(
+    "⚠️ Shopcart Honeypot Alert",
+    `Trap triggered!\n\nIP: ${req.ip}\nPath: ${req.originalUrl}\nUser-Agent: ${req.headers["user-agent"]}`
+  );
+
+  res.status(403).json({ message: "Access denied" });
+};
+
+// Common attack paths
+app.get("/wp-admin", trapHandler);
+app.get("/phpmyadmin", trapHandler);
+app.get("/admin-panel", trapHandler);
+app.get("/.env", trapHandler);
+app.get("/config", trapHandler);
